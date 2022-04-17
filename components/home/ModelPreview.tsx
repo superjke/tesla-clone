@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 interface IProps {
@@ -13,17 +14,19 @@ function ModelPreview(props: IProps) {
         src={props.url}
         alt="Tesla Logo"
       />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 transform text-center">
+      <div className="absolute bottom-3/4 left-1/2 -translate-x-1/2 transform text-center">
         <h1 className="pb-3 text-5xl font-semibold">{props.modelName}</h1>
         <p className="text-lg font-medium text-gray-700">
           Order Online for <span className="underline">Touchless Delivery</span>
         </p>
       </div>
-      <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 transform text-center">
+      <div className="absolute top-3/4 left-1/2 -translate-x-1/2 transform text-center">
         <div className="flex">
-          <button className="mx-6 w-80 rounded-full bg-gray-800/80 px-10 py-2 text-xl font-semibold text-white">
-            Custom Order
-          </button>
+          <Link href={`/configure/${props.modelName}`}>
+            <button className="mx-6 w-80 rounded-full bg-gray-800/80 px-10 py-2 text-xl font-semibold text-white">
+              Custom Order
+            </button>
+          </Link>
           <button className="w-80 rounded-full bg-gray-100/70 px-10 py-2 text-xl font-semibold text-black">
             Existing Inventory
           </button>
