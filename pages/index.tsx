@@ -26,7 +26,7 @@ const Home: NextPage = () => {
 
       <main>
         {models.map((m) => (
-          <ModelPreview modelName={m.name} url={m.url} />
+          <ModelPreview model={m} />
         ))}
         <div className="relative ">
           <img
