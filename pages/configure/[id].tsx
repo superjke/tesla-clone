@@ -2,20 +2,18 @@ import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 import ConfigureForm from '../../components/configure/ConfigureForm'
 import NavBar from '../../components/configure/NavBar'
+import { availableColours } from '../../data/colours'
 import { models } from '../../data/models'
 import { ISelections } from '../../types/configure'
 import { IModel } from '../../types/models'
-import {
-  applyPaintToPreviewUrl,
-  PAINT_ICON_COLOURS,
-} from '../../utils/configure'
+import { applyPaintToPreviewUrl, getColour } from '../../utils/configure'
 
 function ConfigurePage() {
   const router = useRouter()
   const { id } = router.query
   const [selections, setSelections] = useState({
     config: 0,
-    colour: PAINT_ICON_COLOURS.WHITE,
+    colour: 'White',
   })
   const model: IModel | undefined = models.find((m) => m.id === id)
 
@@ -34,7 +32,7 @@ function ConfigurePage() {
               className="h-full w-auto object-contain"
               src={applyPaintToPreviewUrl(
                 model.configs.at(selections.config)?.previewImageUrl,
-                selections.colour
+                getColour(selections.colour)?.code
               )}
               alt="Tesla Logo"
             />

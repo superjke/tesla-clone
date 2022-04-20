@@ -19,7 +19,7 @@ export const models: IModel[] = [
           acceleration: 5.8,
         },
         previewImageUrl:
-          'https://static-assets.tesla.com/configurator/compositor?&options=$MT322,$PPSW,$W40B,$IBB1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=2&version=v0028d202204140414&crop=1300,500,300,300&version=v0028d202204140414',
+          'https://static-assets.tesla.com/configurator/compositor?&options=$MT322,$XXX,$W40B,$IBB1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=2&version=v0028d202204140414&crop=1300,500,300,300&version=v0028d202204140414',
       },
       {
         type: CONFIG_TYPE.AWD,
@@ -32,7 +32,7 @@ export const models: IModel[] = [
           acceleration: 4.2,
         },
         previewImageUrl:
-          'https://static-assets.tesla.com/configurator/compositor?&options=$MT324,$PPSW,$W41B,$IPB1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=1&version=v0028d202204140414&crop=1300,500,300,300&version=v0028d202204140414',
+          'https://static-assets.tesla.com/configurator/compositor?&options=$MT324,$XXX,$W41B,$IPB1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=1&version=v0028d202204140414&crop=1300,500,300,300&version=v0028d202204140414',
       },
       {
         type: CONFIG_TYPE.AWD,
@@ -45,7 +45,7 @@ export const models: IModel[] = [
           acceleration: 3.1,
         },
         previewImageUrl:
-          'https://static-assets.tesla.com/configurator/compositor?&options=$MT317,$PPSW,$W33D,$IPB1,$SLR1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=2&version=v0028d202204140414&crop=1300,500,300,300&version=v0028d202204140414',
+          'https://static-assets.tesla.com/configurator/compositor?&options=$MT317,$XXX,$W33D,$IPB1,$SLR1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=2&version=v0028d202204140414&crop=1300,500,300,300&version=v0028d202204140414',
       },
     ],
   },
@@ -55,7 +55,7 @@ export const models: IModel[] = [
   //   mainPreviewUrl:
   //     'https://tesla-cdn.thron.com/delivery/public/image/tesla/8e2df1b9-a4bf-4eb9-beec-2cf5cc77fca0/bvlatuR/std/2880x2400/Desktop-ModelY?quality=70',
   //   configurePreviewUrl:
-  //     'https://static-assets.tesla.com/configurator/compositor?&options=$MT324,$PPSW,$W41B,$IPB1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=1&version=v0028d202204140414&crop=1300,500,300,300&version=v0028d202204140414',
+  //     'https://static-assets.tesla.com/configurator/compositor?&options=$MT324,$XXX,$W41B,$IPB1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=1&version=v0028d202204140414&crop=1300,500,300,300&version=v0028d202204140414',
   //   configs: [
   //     {
   //       type: CONFIG_TYPE.RWD,
@@ -76,7 +76,7 @@ export const models: IModel[] = [
   //   mainPreviewUrl:
   //     'https://tesla-cdn.thron.com/delivery/public/image/tesla/54a21504-fab5-4e4e-b1d0-bb5ba934c86d/bvlatuR/std/4096x2560/MS-Homepage-Desktop-LHD',
   //   configurePreviewUrl:
-  //     'https://static-assets.tesla.com/configurator/compositor?&options=$MT324,$PPSW,$W41B,$IPB1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=1&version=v0028d202204140414&crop=1300,500,300,300&version=v0028d202204140414',
+  //     'https://static-assets.tesla.com/configurator/compositor?&options=$MT324,$XXX,$W41B,$IPB1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=1&version=v0028d202204140414&crop=1300,500,300,300&version=v0028d202204140414',
   //   configs: [
   //     {
   //       type: CONFIG_TYPE.RWD,
@@ -97,7 +97,7 @@ export const models: IModel[] = [
   //   mainPreviewUrl:
   //     'https://tesla-cdn.thron.com/delivery/public/image/tesla/27fd9006-d653-4d01-bc64-f30df30de1a4/bvlatuR/std/4096x2560/MX-Homepage-Desktop-LHD',
   //   configurePreviewUrl:
-  //     'https://static-assets.tesla.com/configurator/compositor?&options=$MT324,$PPSW,$W41B,$IPB1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=1&version=v0028d202204140414&crop=1300,500,300,300&version=v0028d202204140414',
+  //     'https://static-assets.tesla.com/configurator/compositor?&options=$MT324,$XXX,$W41B,$IPB1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=1&version=v0028d202204140414&crop=1300,500,300,300&version=v0028d202204140414',
   //   configs: [
   //     {
   //       type: CONFIG_TYPE.RWD,
