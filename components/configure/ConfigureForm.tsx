@@ -2,6 +2,7 @@ import React, { MouseEventHandler, useState } from 'react'
 import { ISelections } from '../../types/configure'
 import { CONFIG_TYPE, IModel, IModelStats } from '../../types/models'
 import { getPaintIconUrl, PAINT_ICON_COLOURS } from '../../utils/configure'
+import ColourSelector from './ColourSelector'
 
 const getButton = (
   model: string,
@@ -118,35 +119,11 @@ function ConfigureForm(props: IProps) {
           }
           return <div key={c.name}>{btn}</div>
         })}
-
-        <h1 className="mt-20 text-center text-4xl font-semibold">Colour</h1>
-        <div className="flex items-center justify-center">
-          {colours.map((c) => (
-            <div className="flex h-[100px] w-[100px] items-center justify-center ">
-              <div
-                className={`${
-                  props.selections.colour === c
-                    ? 'rounded-full border-4 border-blue'
-                    : ''
-                }`}
-              >
-                <img
-                  className="py-1 px-1"
-                  src={getPaintIconUrl(c)}
-                  onClick={() =>
-                    props.updateSelections({
-                      ...props.selections,
-                      colour: c,
-                    })
-                  }
-                  alt=""
-                  width={60}
-                  height={40}
-                />
-              </div>
-            </div>
-          ))}
-        </div>
+        <ColourSelector
+          colours={colours}
+          selections={props.selections}
+          updateSelections={props.updateSelections}
+        />
       </div>
     </div>
   )
