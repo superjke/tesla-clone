@@ -1,6 +1,6 @@
-import { PAINT_COLOURS } from '../utils/paint'
+import { PAINT_ICON_COLOURS } from '../utils/configure'
 
 export interface ISelections {
   config: number
-  colour: PAINT_COLOURS
+  colour: PAINT_ICON_COLOURS
 }

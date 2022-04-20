@@ -2,7 +2,6 @@ export interface IModel {
   id: string
   name: string
   mainPreviewUrl: string
-  configurePreviewUrl: string
   configs: IConfig[]
 }
 

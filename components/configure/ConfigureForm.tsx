@@ -1,7 +1,7 @@
 import React, { MouseEventHandler, useState } from 'react'
 import { ISelections } from '../../types/configure'
 import { CONFIG_TYPE, IModel, IModelStats } from '../../types/models'
-import { getPaintIconUrl, PAINT_COLOURS } from '../../utils/paint'
+import { getPaintIconUrl, PAINT_ICON_COLOURS } from '../../utils/configure'
 
 const getButton = (
   model: string,
@@ -62,11 +62,11 @@ function ConfigureForm(props: IProps) {
   const currentConfig = props.model.configs.at(props.selections.config)
   const pageError = currentConfig === undefined
   const colours = [
-    PAINT_COLOURS.WHITE,
-    PAINT_COLOURS.BLACK,
-    PAINT_COLOURS.GREY,
-    PAINT_COLOURS.BLUE,
-    PAINT_COLOURS.RED,
+    PAINT_ICON_COLOURS.WHITE,
+    PAINT_ICON_COLOURS.BLACK,
+    PAINT_ICON_COLOURS.GREY,
+    PAINT_ICON_COLOURS.BLUE,
+    PAINT_ICON_COLOURS.RED,
   ]
 
   let awdSeen = false

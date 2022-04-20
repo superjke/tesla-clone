@@ -5,14 +5,17 @@ import NavBar from '../../components/configure/NavBar'
 import { models } from '../../data/models'
 import { ISelections } from '../../types/configure'
 import { IModel } from '../../types/models'
-import { PAINT_COLOURS } from '../../utils/paint'
+import {
+  applyPaintToPreviewUrl,
+  PAINT_ICON_COLOURS,
+} from '../../utils/configure'
 
 function ConfigurePage() {
   const router = useRouter()
   const { id } = router.query
   const [selections, setSelections] = useState({
     config: 0,
-    colour: PAINT_COLOURS.WHITE,
+    colour: PAINT_ICON_COLOURS.WHITE,
   })
   const model: IModel | undefined = models.find((m) => m.id === id)
 
@@ -29,7 +32,10 @@ function ConfigurePage() {
           <div className=" flex h-screen w-full items-center justify-center">
             <img
               className="h-full w-auto object-contain"
-              src={model.configs.at(selections.config)?.previewImageUrl}
+              src={applyPaintToPreviewUrl(
+                model.configs.at(selections.config)?.previewImageUrl,
+                selections.colour
+              )}
               alt="Tesla Logo"
             />
           </div>

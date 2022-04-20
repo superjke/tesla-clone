@@ -6,8 +6,7 @@ export const models: IModel[] = [
     name: 'Model 3',
     mainPreviewUrl:
       'https://tesla-cdn.thron.com/delivery/public/image/tesla/03e533bf-8b1d-463f-9813-9a597aafb280/bvlatuR/std/4096x2560/M3-Homepage-Desktop-LHD',
-    configurePreviewUrl:
-      'https://static-assets.tesla.com/configurator/compositor?&options=$MT324,$PPSW,$W41B,$IPB1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=1&version=v0028d202204140414&crop=1300,500,300,300&version=v0028d202204140414',
+
     configs: [
       {
         type: CONFIG_TYPE.RWD,
