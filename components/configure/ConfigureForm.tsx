@@ -1,5 +1,7 @@
 import React, { MouseEventHandler, useState } from 'react'
+import { ISelections } from '../../types/configure'
 import { CONFIG_TYPE, IModel, IModelStats } from '../../types/models'
+import { getPaintIconUrl, PAINT_COLOURS } from '../../utils/paint'
 
 const getButton = (
   model: string,
@@ -52,13 +54,20 @@ const statDisplay = (stats: IModelStats) => {
 
 interface IProps {
   model: IModel
-  selectedConfig: number
-  updateSelectedConfig: Function
+  selections: ISelections
+  updateSelections: Function
 }
 
 function ConfigureForm(props: IProps) {
-  const currentConfig = props.model.configs.at(props.selectedConfig)
+  const currentConfig = props.model.configs.at(props.selections.config)
   const pageError = currentConfig === undefined
+  const colours = [
+    PAINT_COLOURS.WHITE,
+    PAINT_COLOURS.BLACK,
+    PAINT_COLOURS.GREY,
+    PAINT_COLOURS.BLUE,
+    PAINT_COLOURS.RED,
+  ]
 
   let awdSeen = false
   let rwdSeen = false
@@ -75,7 +84,7 @@ function ConfigureForm(props: IProps) {
           <h2 className="whitespace-nowrap text-center text-gray-500">
             Est. delivery:{' '}
             {props.model.configs
-              .at(props.selectedConfig)
+              .at(props.selections.config)
               ?.estDelivery.toLocaleString('default', {
                 month: 'long',
                 year: 'numeric',
@@ -89,8 +98,8 @@ function ConfigureForm(props: IProps) {
           const btn = getButton(
             c.name,
             c.price,
-            index === props.selectedConfig,
-            () => props.updateSelectedConfig(index)
+            index === props.selections.config,
+            () => props.updateSelections({ ...props.selections, config: index })
           )
 
           const btnWithH1 = (
@@ -109,6 +118,35 @@ function ConfigureForm(props: IProps) {
           }
           return <div key={c.name}>{btn}</div>
         })}
+
+        <h1 className="mt-20 text-center text-4xl font-semibold">Colour</h1>
+        <div className="flex items-center justify-center">
+          {colours.map((c) => (
+            <div className="flex h-[100px] w-[100px] items-center justify-center ">
+              <div
+                className={`${
+                  props.selections.colour === c
+                    ? 'rounded-full border-4 border-blue'
+                    : ''
+                }`}
+              >
+                <img
+                  className="py-1 px-1"
+                  src={getPaintIconUrl(c)}
+                  onClick={() =>
+                    props.updateSelections({
+                      ...props.selections,
+                      colour: c,
+                    })
+                  }
+                  alt=""
+                  width={60}
+                  height={40}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )
