@@ -1,17 +1,26 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import { IModel } from '../../types/models'
+import useDeviceSize from '../../utils/hooks'
+import useWindowDimensions from '../../utils/hooks'
 
 interface IProps {
   model: IModel
 }
 
 function ModelPreview(props: IProps) {
+  const [width, height] = useDeviceSize()
+  const isMobile = width < 768
+
   return (
     <div className="relative h-screen">
       <img
-        className="h-full w-full object-cover"
-        src={props.model.mainPreviewUrl}
+        className="h-screen w-screen object-cover lg:object-cover"
+        src={
+          !isMobile
+            ? props.model.mainPreviewUrl
+            : 'https://tesla-cdn.thron.com/delivery/public/image/tesla/9160c5a3-b818-42dd-bb98-b8597948c636/bvlatuR/std/1927x4096/M3-Homepage-Mobile-LHD'
+        }
         alt="Tesla Logo"
       />
       <div className="absolute bottom-3/4 left-1/2 -translate-x-1/2 transform text-center">
