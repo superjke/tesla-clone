@@ -1,7 +1,8 @@
 import React, { MouseEventHandler, useState } from 'react'
+import { availableColours, interiorColours } from '../../data/colours'
 import { ISelections } from '../../types/configure'
 import { CONFIG_TYPE, IModel, IModelStats } from '../../types/models'
-import ColourSelector from './ColourSelector'
+import OptionSelector from './OptionSelector'
 
 const getButton = (
   model: string,
@@ -65,10 +66,31 @@ function ConfigureForm(props: IProps) {
   let awdSeen = false
   let rwdSeen = false
 
+  const updateWheelSelection = (selection: number) => {
+    props.updateSelections({
+      ...props.selections,
+      wheels: selection,
+    })
+  }
+
+  const updateColourSelection = (selection: number) => {
+    props.updateSelections({
+      ...props.selections,
+      colour: selection,
+    })
+  }
+
+  const updateInteriorSelection = (selection: number) => {
+    props.updateSelections({
+      ...props.selections,
+      interior: selection,
+    })
+  }
+
   return pageError ? (
     <h1>Something went wrong</h1>
   ) : (
-    <div className="flex h-96 justify-center pt-12 lg:w-[38rem]">
+    <div className="justify-centerlg:w-[38rem] flex">
       <div className="w-[44rem] pt-12 lg:w-[22rem] ">
         <div className="mb-12">
           <h1 className="whitespace-nowrap pb-2 text-center text-4xl font-semibold">
@@ -111,9 +133,31 @@ function ConfigureForm(props: IProps) {
           }
           return <div key={c.name}>{btn}</div>
         })}
-        <ColourSelector
-          selections={props.selections}
-          updateSelections={props.updateSelections}
+
+        <div className="mt-20">
+          <OptionSelector
+            title="Colour"
+            options={availableColours}
+            selected={props.selections.colour}
+            updateSelected={updateColourSelection}
+          />
+        </div>
+
+        <div className="mt-20">
+          <OptionSelector
+            title="Wheels"
+            options={props.model.configs.at(props.selections.config)?.wheels}
+            selected={props.selections.wheels}
+            updateSelected={updateWheelSelection}
+          />
+        </div>
+
+        <div className="mt-20"></div>
+        <OptionSelector
+          title="Interior"
+          options={interiorColours}
+          selected={props.selections.interior}
+          updateSelected={updateInteriorSelection}
         />
       </div>
     </div>

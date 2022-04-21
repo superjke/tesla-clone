@@ -1,4 +1,4 @@
-import { CONFIG_TYPE, IModel } from '../types/models'
+import { CONFIG_TYPE, IModel, OPTION_TYPE } from '../types/models'
 
 export const models: IModel[] = [
   {
@@ -19,7 +19,39 @@ export const models: IModel[] = [
           acceleration: 5.8,
         },
         previewImageUrl:
-          'https://static-assets.tesla.com/configurator/compositor?&options=$MT322,$XXX,$W40B,$IBB1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=2&version=v0028d202204140414&crop=1300,500,300,300&version=v0028d202204140414',
+          'https://static-assets.tesla.com/configurator/compositor?&options=$MT322,$XXX,$WWW,$III&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=2&version=v0028d202204140414&crop=1300,500,300,300&version=v0028d202204140414',
+        wheels: [
+          {
+            type: OPTION_TYPE.WHEEL,
+            name: "18' Aero Wheels",
+            cost: 0,
+            code: 'W40B',
+            iconName: '18-aero',
+          },
+          {
+            type: OPTION_TYPE.WHEEL,
+            name: "19' Sport Wheels",
+            cost: 1500,
+            code: 'W41B',
+            iconName: '19-sport',
+          },
+        ],
+        interior: [
+          {
+            type: OPTION_TYPE.INTERIOR,
+            iconName: 'in3pb',
+            name: 'All Black',
+            code: 'IBB1',
+            cost: 0,
+          },
+          {
+            type: OPTION_TYPE.INTERIOR,
+            iconName: 'white',
+            name: 'Black And White',
+            code: 'IBW1',
+            cost: 1100,
+          },
+        ],
       },
       {
         type: CONFIG_TYPE.AWD,
@@ -32,7 +64,39 @@ export const models: IModel[] = [
           acceleration: 4.2,
         },
         previewImageUrl:
-          'https://static-assets.tesla.com/configurator/compositor?&options=$MT324,$XXX,$W41B,$IPB1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=1&version=v0028d202204140414&crop=1300,500,300,300&version=v0028d202204140414',
+          'https://static-assets.tesla.com/configurator/compositor?&options=$MT328,$XXX,$WWW,$III&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=1&version=v0028d202204140414&crop=1300,500,300,300&version=v0028d202204140414',
+        wheels: [
+          {
+            type: OPTION_TYPE.WHEEL,
+            name: "18' Aero Wheels",
+            cost: 0,
+            code: 'W40B',
+            iconName: '18-aero',
+          },
+          {
+            type: OPTION_TYPE.WHEEL,
+            name: "19' Sport Wheels",
+            cost: 1500,
+            code: 'W41B',
+            iconName: '19-sport',
+          },
+        ],
+        interior: [
+          {
+            type: OPTION_TYPE.INTERIOR,
+            iconName: 'in3pb',
+            name: 'All Black',
+            code: 'IPB1',
+            cost: 0,
+          },
+          {
+            type: OPTION_TYPE.INTERIOR,
+            iconName: 'white',
+            name: 'Black And White',
+            code: 'IPW1',
+            cost: 1100,
+          },
+        ],
       },
       {
         type: CONFIG_TYPE.AWD,
@@ -45,7 +109,32 @@ export const models: IModel[] = [
           acceleration: 3.1,
         },
         previewImageUrl:
-          'https://static-assets.tesla.com/configurator/compositor?&options=$MT317,$XXX,$W33D,$IPB1,$SLR1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=2&version=v0028d202204140414&crop=1300,500,300,300&version=v0028d202204140414',
+          'https://static-assets.tesla.com/configurator/compositor?&options=$MT325,$XXX,$WWW,$III,$SLR1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=2&version=v0028d202204140414&crop=1300,500,300,300&version=v0028d202204140414',
+        wheels: [
+          {
+            type: OPTION_TYPE.WHEEL,
+            name: "20' Überturbine Wheels",
+            cost: 0,
+            code: 'W33D',
+            iconName: '20-uberturbine',
+          },
+        ],
+        interior: [
+          {
+            type: OPTION_TYPE.INTERIOR,
+            iconName: 'in3pb',
+            name: 'All Black',
+            code: 'IPB1',
+            cost: 0,
+          },
+          {
+            type: OPTION_TYPE.INTERIOR,
+            iconName: 'white',
+            name: 'Black And White',
+            code: 'IPW1',
+            cost: 1100,
+          },
+        ],
       },
     ],
   },
