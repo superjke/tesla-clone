@@ -10,7 +10,7 @@ const navButton = (
   HTMLButtonElement
 > => {
   return (
-    <button className=" rounded-full py-2 px-4 text-center text-lg font-semibold lg:hover:bg-gray-500/10">
+    <button className="whitespace-nowrap rounded-full py-2 px-4 text-center text-lg font-semibold lg:hover:bg-gray-500/10">
       {title}
     </button>
   )
@@ -32,7 +32,7 @@ function NavBar() {
 
       {/* Nav Menu 1 */}
       <div
-        className={`absolute left-0 top-16 z-40 flex w-screen flex-col bg-slate-50  transition-all duration-500 ease-in lg:static lg:flex lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:space-x-1 ${
+        className={`absolute left-0 top-16 z-40 flex w-screen flex-col bg-slate-50 transition-all duration-500 ease-in lg:static lg:flex lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:space-x-1 ${
           menuOpen ? 'mt-0' : '-mt-[400px] lg:mt-0'
         }`}
       >
