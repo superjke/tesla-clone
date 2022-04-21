@@ -19,6 +19,8 @@ export const applyPaintToPreviewUrl = (
   return baseUrl.replace('XXX', colourCode)
 }
 
-export const getColour = (colourName: string): IColour | undefined => {
+export const getColour = (
+  colourName: string | undefined
+): IColour | undefined => {
   return availableColours.find((c) => c.name === colourName)
 }

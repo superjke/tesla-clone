@@ -1,6 +1,6 @@
 export interface ISelections {
   config: number
-  colour: string
+  colour: IColour
 }
 
 export interface IColour {

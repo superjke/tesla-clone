@@ -1,7 +1,7 @@
 import React from 'react'
 import { availableColours } from '../../data/colours'
 import { ISelections } from '../../types/configure'
-import { getColour, getPaintIconUrl } from '../../utils/configure'
+import { getPaintIconUrl } from '../../utils/configure'
 
 interface IProps {
   selections: ISelections
@@ -32,7 +32,7 @@ function ColourSelector(props: IProps) {
           >
             <div
               className={`${
-                props.selections.colour === c.name
+                props.selections.colour.code === c.code
                   ? 'rounded-full border-4 border-blue'
                   : ''
               }`}
@@ -43,7 +43,7 @@ function ColourSelector(props: IProps) {
                 onClick={() =>
                   props.updateSelections({
                     ...props.selections,
-                    colour: c.name,
+                    colour: c,
                   })
                 }
                 alt=""
@@ -55,9 +55,9 @@ function ColourSelector(props: IProps) {
         ))}
       </div>
       <div className="flex items-center justify-center space-x-4">
-        <p className="text-xl font-semibold">{props.selections.colour}</p>
+        <p className="text-xl font-semibold">{props.selections.colour.name}</p>
         <p className="text-xl text-gray-600">
-          {formatCost(getColour(props.selections.colour)?.cost)}
+          {formatCost(props.selections.colour.cost)}
         </p>
       </div>
     </div>

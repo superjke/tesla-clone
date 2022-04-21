@@ -32,3 +32,5 @@ export const availableColours: IColour[] = [
     cost: 2100,
   },
 ]
+
+export const defaultColour = availableColours.at(0)

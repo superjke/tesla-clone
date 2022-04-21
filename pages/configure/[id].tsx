@@ -11,9 +11,15 @@ import { applyPaintToPreviewUrl, getColour } from '../../utils/configure'
 function ConfigurePage() {
   const router = useRouter()
   const { id } = router.query
+  const defaultColour = availableColours.at(0)
   const [selections, setSelections] = useState({
     config: 0,
-    colour: 'White',
+    colour: defaultColour ?? {
+      iconName: 'White',
+      name: 'Pearl White Multi-Coat',
+      code: 'PPSW',
+      cost: 0,
+    },
   })
   const model: IModel | undefined = models.find((m) => m.id === id)
 
@@ -32,7 +38,7 @@ function ConfigurePage() {
               className="h-full w-auto object-contain"
               src={applyPaintToPreviewUrl(
                 model.configs.at(selections.config)?.previewImageUrl,
-                getColour(selections.colour)?.code
+                selections.colour?.code
               )}
               alt="Tesla Logo"
             />
