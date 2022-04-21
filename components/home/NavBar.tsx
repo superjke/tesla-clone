@@ -16,13 +16,12 @@ const navButton = (
   )
 }
 
-function NavBar() {
-  const [menuOpen, setMenuOpen] = useState(false)
+interface IProps {
+  menuOpen: boolean
+  toggleMenu: Function
+}
 
-  const toggleNavBar = () => {
-    setMenuOpen(!menuOpen)
-  }
-
+function NavBar(props: IProps) {
   return (
     <header className="fixed top-0 z-50 flex w-full items-center justify-between  py-4 px-5">
       {/* Logo */}
@@ -31,11 +30,7 @@ function NavBar() {
       </div>
 
       {/* Nav Menu 1 */}
-      <div
-        className={`absolute left-0 top-16 z-40 flex w-screen flex-col  transition-all duration-500 ease-in lg:static lg:flex lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:space-x-1 ${
-          menuOpen ? 'mt-0' : '-mt-[400px] lg:mt-0'
-        }`}
-      >
+      <div className="absolute left-0 top-16 z-40 -mt-[400px] flex w-screen flex-col transition-all duration-500 ease-in lg:static lg:mt-0 lg:flex lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:space-x-1">
         {navButton('Model S')}
         {navButton('Model 3')}
         {navButton('Model X')}
@@ -49,9 +44,9 @@ function NavBar() {
         <div className="hidden lg:flex">{navButton('Menu')}</div>
         <div
           className="cursor-pointer lg:hidden"
-          onClick={() => toggleNavBar()}
+          onClick={() => props.toggleMenu()}
         >
-          {menuOpen ? <CloseIcon /> : <MenuIcon />}
+          {props.menuOpen ? <CloseIcon /> : <MenuIcon />}
         </div>
       </div>
     </header>

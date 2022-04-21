@@ -1,8 +1,13 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { useState } from 'react'
 import ModelPreview from '../components/home/ModelPreview'
 import NavBar from '../components/home/NavBar'
 import { models } from '../data/models'
+import SwipeableDrawer from '@mui/material/SwipeableDrawer'
+import CloseIcon from '@mui/icons-material/Close'
+import { grey } from '@mui/material/colors'
+import { IconButton } from '@mui/material'
 
 const footerItems = [
   'Legal',
@@ -15,6 +20,26 @@ const footerItems = [
 ]
 
 const Home: NextPage = () => {
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen)
+  }
+
+  const menuItems = [
+    { name: 'Model S', link: '/' },
+    { name: 'Model 3', link: '/' },
+    { name: 'Model X', link: '/' },
+    { name: 'Model Y', link: '/' },
+    { name: 'Existing Inventory', link: '/' },
+    { name: 'Used Inventory', link: '/' },
+    { name: 'Trade In', link: '/' },
+    { name: 'Test Drive', link: '/' },
+    { name: 'Charging', link: '/' },
+    { name: 'Shop', link: '/' },
+    { name: 'Support', link: '/' },
+  ]
+
   return (
     <div className="">
       <Head>
@@ -22,13 +47,45 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <NavBar />
+      <NavBar menuOpen={menuOpen} toggleMenu={toggleMenu} />
+
+      <SwipeableDrawer
+        anchor={'right'}
+        open={menuOpen}
+        onClose={() => setMenuOpen(false)}
+        onOpen={() => setMenuOpen(true)}
+      >
+        <div className="w-[311px]">
+          <div className="flex flex-col items-center space-y-4">
+            <div className="fixed top-0 right-0 flex w-[311px] justify-end  bg-white">
+              <div className="mt-5 px-5">
+                <CloseIcon
+                  onClick={toggleMenu}
+                  sx={{ fontSize: 30, color: grey[600] }}
+                />
+              </div>
+            </div>
+
+            <ol className="flex flex-col space-y-4 pb-[400px] pt-16">
+              {menuItems.map((item) => {
+                return (
+                  <li key={item.name} className="w-[230px]">
+                    <a title={item.name} href={item.link}>
+                      <span className=" text-gray-600">{item.name}</span>
+                    </a>
+                  </li>
+                )
+              })}
+            </ol>
+          </div>
+        </div>
+      </SwipeableDrawer>
 
       <main className="w-full">
         {models.map((m) => (
-          <ModelPreview model={m} />
+          <ModelPreview key={m.id} model={m} />
         ))}
-        <div className=" relative">
+        <div className="relative">
           <img
             className="h-screen w-screen object-cover"
             src="https://tesla-cdn.thron.com/delivery/public/image/tesla/dd739764-bcaa-4263-9488-8c73bc9fb046/bvlatuR/std/2880x2400/Desktop-Accessories"

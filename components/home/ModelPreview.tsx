@@ -1,8 +1,7 @@
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React from 'react'
 import { IModel } from '../../types/models'
 import useDeviceSize from '../../utils/hooks'
-import useWindowDimensions from '../../utils/hooks'
 
 interface IProps {
   model: IModel
