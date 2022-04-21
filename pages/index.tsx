@@ -24,11 +24,11 @@ const Home: NextPage = () => {
 
       <NavBar />
 
-      <main>
+      <main className="w-full">
         {models.map((m) => (
           <ModelPreview model={m} />
         ))}
-        <div className="relative ">
+        <div className=" relative">
           <img
             className="h-screen w-screen object-cover"
             src="https://tesla-cdn.thron.com/delivery/public/image/tesla/dd739764-bcaa-4263-9488-8c73bc9fb046/bvlatuR/std/2880x2400/Desktop-Accessories"
@@ -44,13 +44,13 @@ const Home: NextPage = () => {
               </button>
             </div>
           </div>
-          <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 transform space-x-8">
+          {/* <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 transform space-x-8">
             {footerItems.map((item) => (
               <p className="cursor-pointer font-semibold text-gray-500">
                 {item}
               </p>
             ))}
-          </div>
+          </div> */}
         </div>
       </main>
     </div>

@@ -21,7 +21,7 @@ function ModelPreview(props: IProps) {
         </p>
       </div>
       <div className="absolute top-3/4 left-1/2 -translate-x-1/2 transform text-center">
-        <div className="flex">
+        <div className="flex flex-col items-center space-y-4 lg:flex-row lg:space-y-0">
           <Link href={`/configure/${props.model.id}`}>
             <button className="mx-6 w-80 rounded-full bg-gray-800/80 px-10 py-2 text-xl font-semibold text-white">
               Custom Order
