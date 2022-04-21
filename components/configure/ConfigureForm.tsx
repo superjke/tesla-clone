@@ -1,5 +1,5 @@
-import React, { MouseEventHandler, useState } from 'react'
-import { availableColours, interiorColours } from '../../data/colours'
+import React, { MouseEventHandler } from 'react'
+import { availableColours } from '../../data/colours'
 import { ISelections } from '../../types/configure'
 import { CONFIG_TYPE, IModel, IModelStats } from '../../types/models'
 import OptionSelector from './OptionSelector'
@@ -155,7 +155,7 @@ function ConfigureForm(props: IProps) {
         <div className="mt-20"></div>
         <OptionSelector
           title="Interior"
-          options={interiorColours}
+          options={currentConfig.interior}
           selected={props.selections.interior}
           updateSelected={updateInteriorSelection}
         />

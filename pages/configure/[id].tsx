@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import ConfigureForm from '../../components/configure/ConfigureForm'
 import NavBar from '../../components/configure/NavBar'
-import { availableColours, interiorColours } from '../../data/colours'
+import { availableColours } from '../../data/colours'
 import { models } from '../../data/models'
 import { ISelections } from '../../types/configure'
 import { IModel } from '../../types/models'
@@ -27,7 +27,7 @@ function ConfigurePage() {
   })
 
   return (
-    <div className="flex h-screen flex-col overflow-y-hidden">
+    <div className="flex h-screen flex-col lg:overflow-y-hidden">
       <NavBar />
 
       {model === undefined ? (
@@ -35,9 +35,9 @@ function ConfigurePage() {
           <h1>Whoops.. Something went wrong</h1>
         </div>
       ) : (
-        <main className="mt-10 flex h-screen flex-col">
-          <div className="flex flex-1 overflow-hidden">
-            <div className="flex h-screen w-full">
+        <main className="mt-20 lg:mt-10 lg:flex lg:h-screen lg:flex-col">
+          <div className="lg:flex lg:flex-1 lg:overflow-hidden">
+            <div className="flex ">
               <img
                 className="h-full w-full object-contain"
                 src={getPreviewUrl(
@@ -53,8 +53,8 @@ function ConfigurePage() {
                 alt=""
               />
             </div>
-            <div className="flex flex-1 flex-col">
-              <div className="flex w-[500px] flex-1 justify-center overflow-y-auto">
+            <div className="flex flex-1 flex-col items-center justify-center">
+              <div className="flex flex-1 justify-center lg:w-[500px] lg:overflow-y-auto">
                 <ConfigureForm
                   model={model}
                   selections={selections}
