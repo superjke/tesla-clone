@@ -138,27 +138,28 @@ export const models: IModel[] = [
       },
     ],
   },
-  // {
-  //   id: 'model-y',
-  //   name: 'Model Y',
-  //   mainPreviewUrl:
-  //     'https://tesla-cdn.thron.com/delivery/public/image/tesla/8e2df1b9-a4bf-4eb9-beec-2cf5cc77fca0/bvlatuR/std/2880x2400/Desktop-ModelY?quality=70',
-  //   configurePreviewUrl:
-  //     'https://static-assets.tesla.com/configurator/compositor?&options=$MT324,$XXX,$W41B,$IPB1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=1&version=v0028d202204140414&crop=1300,500,300,300&version=v0028d202204140414',
-  //   configs: [
-  //     {
-  //       type: CONFIG_TYPE.RWD,
-  //       estDelivery: new Date('2022-08-01'),
-  //       name: 'Standard Range',
-  //       price: 45990,
-  //       stats: {
-  //         range: 305,
-  //         topSpeed: 140,
-  //         acceleration: 5.8,
-  //       },
-  //     },
-  //   ],
-  // },
+  {
+    id: 'model-y',
+    name: 'Model Y',
+    mainPreviewUrl:
+      'https://tesla-cdn.thron.com/delivery/public/image/tesla/8e2df1b9-a4bf-4eb9-beec-2cf5cc77fca0/bvlatuR/std/2880x2400/Desktop-ModelY?quality=70',
+    configs: [],
+  },
+  {
+    id: 'model-s',
+    name: 'Model S',
+    mainPreviewUrl:
+      'https://tesla-cdn.thron.com/delivery/public/image/tesla/54a21504-fab5-4e4e-b1d0-bb5ba934c86d/bvlatuR/std/4096x2560/MS-Homepage-Desktop-LHD',
+    configs: [],
+  },
+  {
+    id: 'model-x',
+    name: 'Model X',
+    mainPreviewUrl:
+      'https://tesla-cdn.thron.com/delivery/public/image/tesla/27fd9006-d653-4d01-bc64-f30df30de1a4/bvlatuR/std/4096x2560/MX-Homepage-Desktop-LHD',
+    configs: [],
+  },
+
   // {
   //   id: 'model-s',
   //   name: 'Model S',
