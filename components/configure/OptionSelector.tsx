@@ -46,12 +46,12 @@ function OptionSelector(props: IProps) {
     <div />
   ) : (
     <div>
-      <h1 className="text-center text-4xl font-semibold">{props.title}</h1>
-      <div className="flex items-center justify-center">
+      <h1 className="text-center text-4xl font-semibold ">{props.title}</h1>
+      <div className="flex justify-center space-x-4">
         {props.options.map((option, index) => (
           <div
             key={option.code}
-            className="flex h-[100px] w-[100px] items-center justify-center "
+            className="h-[60px] w-[60px] items-center justify-center"
           >
             <div
               className={`${
@@ -65,8 +65,6 @@ function OptionSelector(props: IProps) {
                 src={getIconUrl(option)}
                 onClick={() => props.updateSelected(index)}
                 alt=""
-                width={60}
-                height={40}
               />
             </div>
           </div>

@@ -90,77 +90,77 @@ function ConfigureForm(props: IProps) {
   return pageError ? (
     <h1>Something went wrong</h1>
   ) : (
-    <div className="justify-centerlg:w-[38rem] flex">
-      <div className="w-[44rem] pt-12 lg:w-[22rem] ">
-        <div className="mb-12">
-          <h1 className="whitespace-nowrap pb-2 text-center text-4xl font-semibold">
-            {props.model.name}
-          </h1>
-          <h2 className="whitespace-nowrap text-center text-gray-500">
-            Est. delivery:{' '}
-            {props.model.configs
-              .at(props.selections.config)
-              ?.estDelivery.toLocaleString('default', {
-                month: 'long',
-                year: 'numeric',
-              })}
-          </h2>
-        </div>
+    // <div className="flex justify-center lg:w-[38rem]">
+    <div className="w-11/12 pt-12 lg:w-[22rem] ">
+      <div className="mb-12">
+        <h1 className="whitespace-nowrap pb-2 text-center text-4xl font-semibold">
+          {props.model.name}
+        </h1>
+        <h2 className="whitespace-nowrap text-center text-gray-500">
+          Est. delivery:{' '}
+          {props.model.configs
+            .at(props.selections.config)
+            ?.estDelivery.toLocaleString('default', {
+              month: 'long',
+              year: 'numeric',
+            })}
+        </h2>
+      </div>
 
-        {statDisplay(currentConfig?.stats)}
+      {statDisplay(currentConfig?.stats)}
 
-        {props.model.configs.map((c, index) => {
-          const btn = getButton(
-            c.name,
-            c.price,
-            index === props.selections.config,
-            () => props.updateSelections({ ...props.selections, config: index })
-          )
+      {props.model.configs.map((c, index) => {
+        const btn = getButton(
+          c.name,
+          c.price,
+          index === props.selections.config,
+          () => props.updateSelections({ ...props.selections, config: index })
+        )
 
-          const btnWithH1 = (
-            <div key={c.name} className="mt-3">
-              <h1 className="font-semibold text-gray-600">{c.type}</h1>
-              {btn}
-            </div>
-          )
+        const btnWithH1 = (
+          <div key={c.name} className="mt-3">
+            <h1 className="font-semibold text-gray-600">{c.type}</h1>
+            {btn}
+          </div>
+        )
 
-          if (!rwdSeen && c.type === CONFIG_TYPE.RWD) {
-            rwdSeen = true
-            return btnWithH1
-          } else if (!awdSeen && c.type === CONFIG_TYPE.AWD) {
-            awdSeen = true
-            return btnWithH1
-          }
-          return <div key={c.name}>{btn}</div>
-        })}
+        if (!rwdSeen && c.type === CONFIG_TYPE.RWD) {
+          rwdSeen = true
+          return btnWithH1
+        } else if (!awdSeen && c.type === CONFIG_TYPE.AWD) {
+          awdSeen = true
+          return btnWithH1
+        }
+        return <div key={c.name}>{btn}</div>
+      })}
 
-        <div className="mt-20">
-          <OptionSelector
-            title="Colour"
-            options={availableColours}
-            selected={props.selections.colour}
-            updateSelected={updateColourSelection}
-          />
-        </div>
-
-        <div className="mt-20">
-          <OptionSelector
-            title="Wheels"
-            options={props.model.configs.at(props.selections.config)?.wheels}
-            selected={props.selections.wheels}
-            updateSelected={updateWheelSelection}
-          />
-        </div>
-
-        <div className="mt-20"></div>
+      <div className="mt-20">
         <OptionSelector
-          title="Interior"
-          options={currentConfig.interior}
-          selected={props.selections.interior}
-          updateSelected={updateInteriorSelection}
+          title="Colour"
+          options={availableColours}
+          selected={props.selections.colour}
+          updateSelected={updateColourSelection}
         />
       </div>
+
+      <div className="mt-20">
+        <OptionSelector
+          title="Wheels"
+          options={props.model.configs.at(props.selections.config)?.wheels}
+          selected={props.selections.wheels}
+          updateSelected={updateWheelSelection}
+        />
+      </div>
+
+      <div className="mt-20"></div>
+      <OptionSelector
+        title="Interior"
+        options={currentConfig.interior}
+        selected={props.selections.interior}
+        updateSelected={updateInteriorSelection}
+      />
     </div>
+    // </div>
   )
 }
 
