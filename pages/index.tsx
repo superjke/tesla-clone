@@ -8,6 +8,7 @@ import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 import CloseIcon from '@mui/icons-material/Close'
 import { grey } from '@mui/material/colors'
 import { IconButton } from '@mui/material'
+import useDeviceSize from '../utils/hooks'
 
 const footerItems = [
   'Legal',
@@ -21,6 +22,8 @@ const footerItems = [
 
 const Home: NextPage = () => {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [width, height] = useDeviceSize()
+  const isMobile = width < 768
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen)
@@ -88,7 +91,11 @@ const Home: NextPage = () => {
         <div className="relative">
           <img
             className="h-screen w-screen object-cover"
-            src="https://tesla-cdn.thron.com/delivery/public/image/tesla/dd739764-bcaa-4263-9488-8c73bc9fb046/bvlatuR/std/2880x2400/Desktop-Accessories"
+            src={
+              isMobile
+                ? 'https://tesla-cdn.thron.com/delivery/public/image/tesla/69095129-86c5-4f6c-a77a-740ceac04e82/bvlatuR/std/800x2100/Mobile-Accessories'
+                : 'https://tesla-cdn.thron.com/delivery/public/image/tesla/dd739764-bcaa-4263-9488-8c73bc9fb046/bvlatuR/std/2880x2400/Desktop-Accessories'
+            }
             alt="Tesla Logo"
           />
           <div className="absolute bottom-3/4 left-1/2 -translate-x-1/2 transform text-center">

@@ -2,6 +2,7 @@ export interface IModel {
   id: string
   name: string
   mainPreviewUrl: string
+  mainMobilePreviewUrl: string
   configs: IConfig[]
 }
 

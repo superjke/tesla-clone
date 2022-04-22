@@ -16,9 +16,9 @@ function ModelPreview(props: IProps) {
       <img
         className="h-screen w-screen object-cover lg:object-cover"
         src={
-          !isMobile
-            ? props.model.mainPreviewUrl
-            : 'https://tesla-cdn.thron.com/delivery/public/image/tesla/9160c5a3-b818-42dd-bb98-b8597948c636/bvlatuR/std/1927x4096/M3-Homepage-Mobile-LHD'
+          isMobile
+            ? props.model.mainMobilePreviewUrl
+            : props.model.mainPreviewUrl
         }
         alt="Tesla Logo"
       />
