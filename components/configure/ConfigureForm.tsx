@@ -3,6 +3,7 @@ import { availableColours } from '../../data/colours'
 import { ISelections } from '../../types/configure'
 import { CONFIG_TYPE, IModel, IModelStats } from '../../types/models'
 import AutoPilotOption from './AutoPilotOption'
+import ButtonsComp from './ButtonsComp'
 import OptionSelector from './OptionSelector'
 import VideoPreview from './VideoPreview'
 
@@ -194,6 +195,44 @@ function ConfigureForm(props: IProps) {
           ]}
           upcomingFeatures={['Autosteer on city streets']}
         />
+
+        <div className="flex justify-center">
+          <div className="w-[85%]">
+            <p className="text-md text-gray-600">
+              The currently enabled features require active driver supervision
+              and do not make the vehicle autonomous. Some features require turn
+              signals and are limited in range. The activation and use of these
+              features are dependent on achieving reliability far in excess of
+              human drivers as demonstrated by billions of miles of experience,
+              as well as regulatory approval, which may take longer in some
+              jurisdictions. As these self-driving features evolve, your car
+              will be continuously upgraded through over-the-air software
+              updates. Please read the
+              <span className="mx-1 underline underline-offset-2">
+                Owner’s Manual
+              </span>
+              for further information.
+            </p>
+          </div>
+        </div>
+        <div className="flex flex-col items-center">
+          <h1 className="mb-2 text-3xl font-semibold">Order your Model 3</h1>
+          <span className="text-lg font-semibold">Est. delivery: Feb 2023</span>
+        </div>
+        <div className="mx-[4.5rem] flex justify-center rounded-3xl bg-blue py-2">
+          <span className="uppercase text-white">Continue to payment</span>
+        </div>
+
+        <div className="relative -top-24 mx-14 flex items-center text-center">
+          <span className="text-md mx-8 p-6 text-gray-600">
+            Delivery timing may vary based on your configuration and location.
+            <a className="pl-1 underline underline-offset-4" href="">
+              See faster options
+            </a>
+          </span>
+
+          <div className="pb-[260px]"></div>
+        </div>
       </div>
 
       <div className="h-96 bg-slate-200"></div>

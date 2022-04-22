@@ -1,4 +1,6 @@
+import { Upcoming } from '@mui/icons-material'
 import React from 'react'
+import ButtonsComp from './ButtonsComp'
 
 interface IProps {
   title: string
@@ -19,11 +21,28 @@ function AutoPilotOption(props: IProps) {
           {props.features.map((feature) => {
             return (
               <li>
-                <span className="font-light text-gray-600">{feature}</span>
+                <span className=" font-light text-gray-600">{feature}</span>
               </li>
             )
           })}
         </ul>
+        {props.upcomingFeatures ? (
+          <>
+            <div className="relative -left-7 mt-4">
+              <span className="text-xl font-semibold">Upcoming:</span>
+            </div>
+            <ul style={{ listStyleType: 'disc' }}>
+              <li className="pt-3">
+                <span className="text-gray-600">Autosteer on city streets</span>
+              </li>
+            </ul>
+          </>
+        ) : (
+          <div />
+        )}
+      </div>
+      <div className="mt-8 flex h-9 w-full justify-around">
+        <ButtonsComp nameLeft="Add" nameRight="Feature Detials" />
       </div>
     </div>
   )

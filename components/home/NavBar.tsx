@@ -34,11 +34,13 @@ function NavBar(props: IProps) {
       />
 
       {/* Nav Menu 1 */}
-      <div className="absolute left-0 top-16 z-40 -mt-[400px] flex w-screen flex-col transition-all duration-500 ease-in lg:static lg:mt-0 lg:flex lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:space-x-1">
-        {navButton('Model S')}
-        {navButton('Model 3')}
-        {navButton('Model X')}
-        {navButton('Model Y')}
+      <div className="absolute">
+        <div className="absolute left-0 top-16 z-40 -mt-[400px] flex w-screen flex-col transition-all duration-500 ease-in lg:static lg:mt-0 lg:flex lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:space-x-1">
+          {navButton('Model S')}
+          {navButton('Model 3')}
+          {navButton('Model X')}
+          {navButton('Model Y')}
+        </div>
       </div>
 
       {/* Nav Menu 2 */}
