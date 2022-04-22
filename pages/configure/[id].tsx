@@ -54,7 +54,7 @@ function ConfigurePage() {
               />
             </div>
             <div className="lg:flex lg:flex-1 lg:flex-col lg:items-center lg:justify-center">
-              <div className="flex flex-1 justify-center lg:w-[500px] lg:overflow-y-auto">
+              <div className="mb-20 flex flex-1 justify-center lg:w-[500px] lg:overflow-y-auto">
                 <ConfigureForm
                   model={model}
                   selections={selections}

@@ -45,7 +45,7 @@ function OptionSelector(props: IProps) {
   return !props.options ? (
     <div />
   ) : (
-    <div>
+    <div className="flex flex-col space-y-5">
       <h1 className="text-center text-4xl font-semibold ">{props.title}</h1>
       <div className="flex justify-center space-x-4">
         {props.options.map((option, index) => (

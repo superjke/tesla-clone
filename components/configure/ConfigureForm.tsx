@@ -2,7 +2,9 @@ import React, { MouseEventHandler } from 'react'
 import { availableColours } from '../../data/colours'
 import { ISelections } from '../../types/configure'
 import { CONFIG_TYPE, IModel, IModelStats } from '../../types/models'
+import AutoPilotOption from './AutoPilotOption'
 import OptionSelector from './OptionSelector'
+import VideoPreview from './VideoPreview'
 
 const getButton = (
   model: string,
@@ -90,77 +92,112 @@ function ConfigureForm(props: IProps) {
   return pageError ? (
     <h1>Something went wrong</h1>
   ) : (
-    // <div className="flex justify-center lg:w-[38rem]">
-    <div className="w-11/12 pt-12 lg:w-[22rem] ">
-      <div className="mb-12">
-        <h1 className="whitespace-nowrap pb-2 text-center text-4xl font-semibold">
-          {props.model.name}
-        </h1>
-        <h2 className="whitespace-nowrap text-center text-gray-500">
-          Est. delivery:{' '}
-          {props.model.configs
-            .at(props.selections.config)
-            ?.estDelivery.toLocaleString('default', {
-              month: 'long',
-              year: 'numeric',
-            })}
-        </h2>
-      </div>
+    <div className="flex flex-col items-center">
+      <div className="w-11/12 pt-12 lg:w-[22rem] ">
+        <div className="mb-12">
+          <h1 className="whitespace-nowrap pb-2 text-center text-4xl font-semibold">
+            {props.model.name}
+          </h1>
+          <h2 className="whitespace-nowrap text-center text-gray-500">
+            Est. delivery:{' '}
+            {props.model.configs
+              .at(props.selections.config)
+              ?.estDelivery.toLocaleString('default', {
+                month: 'long',
+                year: 'numeric',
+              })}
+          </h2>
+        </div>
 
-      {statDisplay(currentConfig?.stats)}
+        {statDisplay(currentConfig?.stats)}
 
-      {props.model.configs.map((c, index) => {
-        const btn = getButton(
-          c.name,
-          c.price,
-          index === props.selections.config,
-          () => props.updateSelections({ ...props.selections, config: index })
-        )
+        {props.model.configs.map((c, index) => {
+          const btn = getButton(
+            c.name,
+            c.price,
+            index === props.selections.config,
+            () => props.updateSelections({ ...props.selections, config: index })
+          )
 
-        const btnWithH1 = (
-          <div key={c.name} className="mt-3">
-            <h1 className="font-semibold text-gray-600">{c.type}</h1>
-            {btn}
-          </div>
-        )
+          const btnWithH1 = (
+            <div key={c.name} className="mt-3">
+              <h1 className="font-semibold text-gray-600">{c.type}</h1>
+              {btn}
+            </div>
+          )
 
-        if (!rwdSeen && c.type === CONFIG_TYPE.RWD) {
-          rwdSeen = true
-          return btnWithH1
-        } else if (!awdSeen && c.type === CONFIG_TYPE.AWD) {
-          awdSeen = true
-          return btnWithH1
-        }
-        return <div key={c.name}>{btn}</div>
-      })}
+          if (!rwdSeen && c.type === CONFIG_TYPE.RWD) {
+            rwdSeen = true
+            return btnWithH1
+          } else if (!awdSeen && c.type === CONFIG_TYPE.AWD) {
+            awdSeen = true
+            return btnWithH1
+          }
+          return <div key={c.name}>{btn}</div>
+        })}
 
-      <div className="mt-20">
+        <div className="mt-20">
+          <OptionSelector
+            title="Colour"
+            options={availableColours}
+            selected={props.selections.colour}
+            updateSelected={updateColourSelection}
+          />
+        </div>
+
+        <div className="mt-20">
+          <OptionSelector
+            title="Wheels"
+            options={props.model.configs.at(props.selections.config)?.wheels}
+            selected={props.selections.wheels}
+            updateSelected={updateWheelSelection}
+          />
+        </div>
+
+        <div className="mt-20"></div>
         <OptionSelector
-          title="Colour"
-          options={availableColours}
-          selected={props.selections.colour}
-          updateSelected={updateColourSelection}
+          title="Interior"
+          options={currentConfig.interior}
+          selected={props.selections.interior}
+          updateSelected={updateInteriorSelection}
         />
       </div>
-
-      <div className="mt-20">
-        <OptionSelector
-          title="Wheels"
-          options={props.model.configs.at(props.selections.config)?.wheels}
-          selected={props.selections.wheels}
-          updateSelected={updateWheelSelection}
-        />
-      </div>
-
-      <div className="mt-20"></div>
-      <OptionSelector
-        title="Interior"
-        options={currentConfig.interior}
-        selected={props.selections.interior}
-        updateSelected={updateInteriorSelection}
+      <VideoPreview
+        title="Summon"
+        url="https://tesla-cdn.thron.com/static/VHVGBL_summon_v2_OSYOWQ.mp4"
       />
+      <VideoPreview
+        title="Navigate On Autopilot"
+        url="https://www.tesla.com/ns_videos/model3/autopilot/navigate-on-autopilot.mp4"
+      />
+
+      <div className="w-[90%] space-y-12">
+        <AutoPilotOption
+          title="Enhanced Autopilot"
+          cost={3400}
+          features={[
+            'Navigate on Autopilot',
+            'Auto Lane Change',
+            'Autopark',
+            'Summon',
+            'Smart Summon',
+          ]}
+        />
+
+        <AutoPilotOption
+          title="Full Self-Driving Capability"
+          cost={6800}
+          features={[
+            'All functionality of Basic Autopilot',
+            'Enhanced Autopilot',
+            'Traffic Light and Stop Sign Control',
+          ]}
+          upcomingFeatures={['Autosteer on city streets']}
+        />
+      </div>
+
+      <div className="h-96 bg-slate-200"></div>
     </div>
-    // </div>
   )
 }
 
