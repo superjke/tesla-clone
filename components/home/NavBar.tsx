@@ -23,11 +23,15 @@ interface IProps {
 
 function NavBar(props: IProps) {
   return (
-    <header className="fixed top-0 z-50 flex w-full items-center justify-between  py-4 px-5">
+    <header className="fixed top-0 z-50 flex w-full items-center justify-between bg-slate-50/30 py-3 px-5">
       {/* Logo */}
-      <div className="shrink-0 cursor-pointer">
-        <Image src="/tesla-logo.svg" alt="Tesla Logo" width={128} height={36} />
-      </div>
+      <Image
+        className="shrink-0 cursor-pointer"
+        src="/tesla-logo.svg"
+        alt="Tesla Logo"
+        width={128}
+        height={36}
+      />
 
       {/* Nav Menu 1 */}
       <div className="absolute left-0 top-16 z-40 -mt-[400px] flex w-screen flex-col transition-all duration-500 ease-in lg:static lg:mt-0 lg:flex lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:space-x-1">
