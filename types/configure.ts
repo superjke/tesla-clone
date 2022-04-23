@@ -3,4 +3,6 @@ export interface ISelections {
   colour: number
   wheels: number
   interior: number
+  enhancedAutopilot: boolean
+  fsdAutopilot: boolean
 }

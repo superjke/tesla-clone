@@ -7,6 +7,8 @@ interface IProps {
   cost: number
   features: string[]
   upcomingFeatures?: string[]
+  selected: boolean
+  toggleOption: Function
 }
 
 function AutoPilotOption(props: IProps) {
@@ -41,10 +43,15 @@ function AutoPilotOption(props: IProps) {
           <div />
         )}
       </div>
-      <div className="mt-8 flex h-9 w-full justify-between space-x-12">
-        <div className="flex w-full items-center justify-center rounded-3xl bg-blue text-sm font-medium uppercase text-white">
-          Add
-        </div>
+      <div className="mt-8 flex h-9 w-full justify-between space-x-8">
+        <button
+          onClick={() => props.toggleOption()}
+          className={`flex w-full items-center justify-center rounded-3xl  text-sm font-medium uppercase ${
+            props.selected ? 'bg-gray-100 text-black' : 'bg-blue text-white'
+          }`}
+        >
+          {props.selected ? 'Remove' : 'Add'}
+        </button>
         <div className="flex w-full items-center justify-center rounded-3xl bg-gray-100 text-sm uppercase text-black">
           Feature Details
         </div>

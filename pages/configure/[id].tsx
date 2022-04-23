@@ -16,7 +16,10 @@ function ConfigurePage() {
     colour: 0,
     wheels: 0,
     interior: 0,
+    enhancedAutopilot: false,
+    fsdAutopilot: false,
   })
+  const [previewLoading, setPreviewLoading] = useState(true)
   const model: IModel | undefined = models.find((m) => m.id === id)
   const wheelOptions = model?.configs.at(selections.config)?.wheels
 
@@ -38,7 +41,7 @@ function ConfigurePage() {
       ) : (
         <main className="mt-16 lg:flex lg:h-screen lg:flex-col">
           <div className="lg:flex lg:flex-1 lg:overflow-hidden">
-            <div className="flex ">
+            <div>
               <img
                 className="mt-16 h-full w-full object-contain lg:mt-0"
                 src={getPreviewUrl(
@@ -52,6 +55,7 @@ function ConfigurePage() {
                     ?.interior.at(selections.interior)?.code
                 )}
                 alt=""
+                onLoad={() => setPreviewLoading(false)}
               />
             </div>
             <div className="lg:flex lg:flex-1 lg:flex-col lg:items-center lg:justify-center">

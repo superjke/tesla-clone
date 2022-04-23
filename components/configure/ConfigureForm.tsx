@@ -91,6 +91,36 @@ function ConfigureForm(props: IProps) {
     })
   }
 
+  const toggleEnhancedAutopilot = () => {
+    if (props.selections.enhancedAutopilot) {
+      props.updateSelections({
+        ...props.selections,
+        enhancedAutopilot: false,
+      })
+    } else {
+      props.updateSelections({
+        ...props.selections,
+        enhancedAutopilot: true,
+        fsdAutopilot: false,
+      })
+    }
+  }
+
+  const toggleFsdAutopilot = () => {
+    if (props.selections.fsdAutopilot) {
+      props.updateSelections({
+        ...props.selections,
+        fsdAutopilot: false,
+      })
+    } else {
+      props.updateSelections({
+        ...props.selections,
+        fsdAutopilot: true,
+        enhancedAutopilot: false,
+      })
+    }
+  }
+
   const toggleSummary = () => {
     setShowSummary(!showSummary)
   }
@@ -119,31 +149,36 @@ function ConfigureForm(props: IProps) {
 
             {statDisplay(currentConfig?.stats)}
 
-            {props.model.configs.map((c, index) => {
-              const btn = getButton(
-                c.name,
-                c.price,
-                index === props.selections.config,
-                () =>
-                  props.updateSelections({ ...props.selections, config: index })
-              )
+            <div className="space-y-1">
+              {props.model.configs.map((c, index) => {
+                const btn = getButton(
+                  c.name,
+                  c.price,
+                  index === props.selections.config,
+                  () =>
+                    props.updateSelections({
+                      ...props.selections,
+                      config: index,
+                    })
+                )
 
-              const btnWithH1 = (
-                <div key={c.name} className="mt-3">
-                  <h1 className="font-semibold text-gray-600">{c.type}</h1>
-                  {btn}
-                </div>
-              )
+                const btnWithH1 = (
+                  <div key={c.name} className="mt-3">
+                    <h1 className="font-semibold text-gray-600">{c.type}</h1>
+                    {btn}
+                  </div>
+                )
 
-              if (!rwdSeen && c.type === CONFIG_TYPE.RWD) {
-                rwdSeen = true
-                return btnWithH1
-              } else if (!awdSeen && c.type === CONFIG_TYPE.AWD) {
-                awdSeen = true
-                return btnWithH1
-              }
-              return <div key={c.name}>{btn}</div>
-            })}
+                if (!rwdSeen && c.type === CONFIG_TYPE.RWD) {
+                  rwdSeen = true
+                  return btnWithH1
+                } else if (!awdSeen && c.type === CONFIG_TYPE.AWD) {
+                  awdSeen = true
+                  return btnWithH1
+                }
+                return <div key={c.name}>{btn}</div>
+              })}
+            </div>
           </div>
           <OptionSelector
             title="Paint"
@@ -185,6 +220,8 @@ function ConfigureForm(props: IProps) {
                 'Summon',
                 'Smart Summon',
               ]}
+              selected={props.selections.enhancedAutopilot}
+              toggleOption={toggleEnhancedAutopilot}
             />
 
             <AutoPilotOption
@@ -196,6 +233,8 @@ function ConfigureForm(props: IProps) {
                 'Traffic Light and Stop Sign Control',
               ]}
               upcomingFeatures={['Autosteer on city streets']}
+              selected={props.selections.fsdAutopilot}
+              toggleOption={toggleFsdAutopilot}
             />
           </div>
           <div className="flex flex-col items-center justify-center space-y-8 pb-[196px] ">

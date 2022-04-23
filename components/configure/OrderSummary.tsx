@@ -33,7 +33,7 @@ function OrderSummary(props: IProps) {
         </div>
         <div className="mt-12  space-y-16 lg:space-y-16">
           <div>
-            <h1 className="whitespace-nowrap pb-2 text-center text-3xl font-medium">
+            <h1 className="whitespace-nowrap text-center font-gotham text-3xl font-medium">
               Your {props.model.name}
             </h1>
             <h2 className="whitespace-nowrap text-center text-gray-600">
@@ -45,8 +45,8 @@ function OrderSummary(props: IProps) {
                   year: 'numeric',
                 })}
             </h2>
-            <div className="mt-4 w-full lg:px-5">
-              <ol className="space-y-2 text-center font-light ">
+            <div className="mt-8 w-full lg:px-5">
+              <ol className="space-y-2 text-center text-gray-600 ">
                 <li>
                   <span>
                     {props.model.name}{' '}
@@ -80,6 +80,23 @@ function OrderSummary(props: IProps) {
                 <li>
                   <span>Autopilot</span>
                 </li>
+                {props.selections.enhancedAutopilot ? (
+                  <li>
+                    <span>Enhanced Autopilot</span>
+                  </li>
+                ) : (
+                  <></>
+                )}
+
+                <li></li>
+                {props.selections.fsdAutopilot ? (
+                  <li>
+                    <span>Full Self-Driving Capability</span>
+                  </li>
+                ) : (
+                  <></>
+                )}
+
                 <li>
                   <span>30-Day Premium Connectivity Trial</span>
                 </li>
