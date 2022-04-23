@@ -23,7 +23,9 @@ function ModelPreview(props: IProps) {
         alt="Tesla Logo"
       />
       <div className="absolute bottom-3/4 left-1/2 -translate-x-1/2 transform text-center">
-        <h1 className="pb-3 text-5xl font-semibold">{props.model.name}</h1>
+        <h1 className="pb-3 font-gotham text-5xl font-medium">
+          {props.model.name}
+        </h1>
         <p className="text-lg font-medium text-gray-700">
           Order Online for <span className="underline">Touchless Delivery</span>
         </p>

@@ -35,12 +35,12 @@ const getButton = (
 const statDisplay = (stats: IModelStats) => {
   const singleStat = (value: number, unit: string, descriptor: string) => {
     return (
-      <div className="text-center">
+      <div className=" flex flex-col items-center text-center">
         <div className="flex items-baseline pb-2">
-          <p className="text-2xl font-bold">{value}</p>
+          <p className="text-2xl font-semibold">{value}</p>
           <p className="font-semibold">{unit}</p>
         </div>
-        <div className=" text-gray-500">
+        <div className=" font-light text-gray-600">
           <span>{descriptor}</span>
         </div>
       </div>
@@ -101,9 +101,9 @@ function ConfigureForm(props: IProps) {
     <div className="flex flex-col items-center space-y-20 lg:space-y-40">
       {!showSummary ? (
         <>
-          <div className="w-11/12 pt-8 lg:w-[22rem] ">
+          <div className="w-11/12 pt-8 lg:w-[22rem] lg:pt-20 ">
             <div className="mb-12">
-              <h1 className="whitespace-nowrap pb-2 text-center text-4xl font-semibold">
+              <h1 className="whitespace-nowrap text-center font-gotham text-4xl">
                 {props.model.name}
               </h1>
               <h2 className="whitespace-nowrap text-center text-gray-500">

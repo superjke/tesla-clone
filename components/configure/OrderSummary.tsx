@@ -36,7 +36,7 @@ function OrderSummary(props: IProps) {
             <h1 className="whitespace-nowrap pb-2 text-center text-3xl font-medium">
               Your {props.model.name}
             </h1>
-            <h2 className="whitespace-nowrap text-center text-gray-500">
+            <h2 className="whitespace-nowrap text-center text-gray-600">
               Est. delivery:{' '}
               {props.model.configs
                 .at(props.selections.config)
@@ -46,7 +46,7 @@ function OrderSummary(props: IProps) {
                 })}
             </h2>
             <div className="mt-4 w-full lg:px-5">
-              <ol className="space-y-2 text-center font-light text-gray-600">
+              <ol className="space-y-2 text-center font-light ">
                 <li>
                   <span>
                     {props.model.name}{' '}
@@ -108,7 +108,7 @@ function OrderSummary(props: IProps) {
             </div>
           </div>
           <div>
-            <button className="w-full rounded-full border-4 border-black py-1">
+            <button className="w-full rounded-full border-4 border-black py-2">
               <span className="text-sm">ORDER WITH CARD</span>
             </button>
           </div>
