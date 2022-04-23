@@ -1,3 +1,4 @@
+import { CircularProgress } from '@mui/material'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import ConfigureForm from '../../components/configure/ConfigureForm'
@@ -35,13 +36,18 @@ function ConfigurePage() {
       <NavBar />
 
       {model === undefined ? (
-        <div className="mt-32 text-center">
-          <h1>Whoops.. Something went wrong</h1>
-        </div>
+        <div></div>
       ) : (
         <main className="mt-16 lg:flex lg:h-screen lg:flex-col">
+          {previewLoading ? (
+            <div className="-mt-[4rem] flex h-screen items-center justify-center">
+              <CircularProgress />
+            </div>
+          ) : (
+            <></>
+          )}
           <div className="lg:flex lg:flex-1 lg:overflow-hidden">
-            <div>
+            <div className={previewLoading ? 'hidden' : ''}>
               <img
                 className="mt-16 h-full w-full object-contain lg:mt-0"
                 src={getPreviewUrl(
@@ -58,17 +64,19 @@ function ConfigurePage() {
                 onLoad={() => setPreviewLoading(false)}
               />
             </div>
-            <div className="lg:flex lg:flex-1 lg:flex-col lg:items-center lg:justify-center">
-              <div className="flex flex-1 justify-center lg:w-[500px] lg:overflow-y-auto">
-                <ConfigureForm
-                  model={model}
-                  selections={selections}
-                  updateSelections={(updatedSelections: ISelections) =>
-                    setSelections(updatedSelections)
-                  }
-                />
+            {!previewLoading && (
+              <div className="lg:flex lg:flex-1 lg:flex-col lg:items-center lg:justify-center">
+                <div className="flex flex-1 justify-center lg:w-[500px] lg:overflow-y-auto">
+                  <ConfigureForm
+                    model={model}
+                    selections={selections}
+                    updateSelections={(updatedSelections: ISelections) =>
+                      setSelections(updatedSelections)
+                    }
+                  />
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </main>
       )}
