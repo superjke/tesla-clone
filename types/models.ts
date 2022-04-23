@@ -28,7 +28,7 @@ export interface IOption {
   name: string
   cost: number
   code: string
-  iconName: string
+  iconUrl: string
 }
 
 export enum OPTION_TYPE {

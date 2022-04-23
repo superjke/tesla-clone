@@ -25,22 +25,6 @@ const formatCost = (cost: number | undefined): string => {
   return `£${cost.toLocaleString()}`
 }
 
-const getIconUrl = (option: IOption | undefined) => {
-  if (!option) {
-    return ''
-  }
-  if (option?.type === OPTION_TYPE.COLOUR) {
-    return getPaintIconUrl(option.iconName)
-  }
-  if (option?.type === OPTION_TYPE.WHEEL) {
-    return getWheelIconUrl(option.iconName)
-  }
-  if (option?.type === OPTION_TYPE.INTERIOR) {
-    return getInteriorIconUrl(option.iconName)
-  }
-  return ''
-}
-
 function OptionSelector(props: IProps) {
   return !props.options ? (
     <div />
@@ -62,7 +46,7 @@ function OptionSelector(props: IProps) {
             >
               <img
                 className="py-1 px-1"
-                src={getIconUrl(option)}
+                src={option.iconUrl}
                 onClick={() => props.updateSelected(index)}
                 alt=""
               />

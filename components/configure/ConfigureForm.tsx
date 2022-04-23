@@ -93,7 +93,7 @@ function ConfigureForm(props: IProps) {
   return pageError ? (
     <h1>Something went wrong</h1>
   ) : (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center space-y-28">
       <div className="w-11/12 pt-12 lg:w-[22rem] ">
         <div className="mb-12">
           <h1 className="whitespace-nowrap pb-2 text-center text-4xl font-semibold">
@@ -136,33 +136,27 @@ function ConfigureForm(props: IProps) {
           }
           return <div key={c.name}>{btn}</div>
         })}
-
-        <div className="mt-20">
-          <OptionSelector
-            title="Colour"
-            options={availableColours}
-            selected={props.selections.colour}
-            updateSelected={updateColourSelection}
-          />
-        </div>
-
-        <div className="mt-20">
-          <OptionSelector
-            title="Wheels"
-            options={props.model.configs.at(props.selections.config)?.wheels}
-            selected={props.selections.wheels}
-            updateSelected={updateWheelSelection}
-          />
-        </div>
-
-        <div className="mt-20"></div>
-        <OptionSelector
-          title="Interior"
-          options={currentConfig.interior}
-          selected={props.selections.interior}
-          updateSelected={updateInteriorSelection}
-        />
       </div>
+      <OptionSelector
+        title="Paint"
+        options={availableColours}
+        selected={props.selections.colour}
+        updateSelected={updateColourSelection}
+      />
+
+      <OptionSelector
+        title="Wheels"
+        options={props.model.configs.at(props.selections.config)?.wheels}
+        selected={props.selections.wheels}
+        updateSelected={updateWheelSelection}
+      />
+
+      <OptionSelector
+        title="Interior"
+        options={currentConfig.interior}
+        selected={props.selections.interior}
+        updateSelected={updateInteriorSelection}
+      />
       <VideoPreview
         title="Summon"
         url="https://tesla-cdn.thron.com/static/VHVGBL_summon_v2_OSYOWQ.mp4"
@@ -172,7 +166,7 @@ function ConfigureForm(props: IProps) {
         url="https://www.tesla.com/ns_videos/model3/autopilot/navigate-on-autopilot.mp4"
       />
 
-      <div className="w-[90%] space-y-12">
+      <div className="w-[90%] space-y-24">
         <AutoPilotOption
           title="Enhanced Autopilot"
           cost={3400}
@@ -196,46 +190,26 @@ function ConfigureForm(props: IProps) {
           upcomingFeatures={['Autosteer on city streets']}
         />
 
-        <div className="flex justify-center">
-          <div className="w-[85%]">
-            <p className="text-md text-gray-600">
-              The currently enabled features require active driver supervision
-              and do not make the vehicle autonomous. Some features require turn
-              signals and are limited in range. The activation and use of these
-              features are dependent on achieving reliability far in excess of
-              human drivers as demonstrated by billions of miles of experience,
-              as well as regulatory approval, which may take longer in some
-              jurisdictions. As these self-driving features evolve, your car
-              will be continuously upgraded through over-the-air software
-              updates. Please read the
-              <span className="mx-1 underline underline-offset-2">
-                Owner’s Manual
-              </span>
-              for further information.
-            </p>
+        <div className="flex flex-col items-center justify-center space-y-6 pt-16 pb-[196px] ">
+          <div className="flex flex-col items-center">
+            <h1 className="mb-2 text-3xl font-semibold">Order your Model 3</h1>
+            <span className="text-lg font-semibold">
+              Est. delivery: Feb 2023
+            </span>
+          </div>
+          <div className="mx-[4.5rem] flex w-[60%] justify-center rounded-3xl bg-blue py-2">
+            <span className="uppercase text-white">Continue to payment</span>
+          </div>
+          <div className="w-[60%] text-center">
+            <span className="text-md  text-gray-600">
+              Delivery timing may vary based on your configuration and location.
+              <a className="pl-1 underline underline-offset-4" href="">
+                See faster options
+              </a>
+            </span>
           </div>
         </div>
-        <div className="flex flex-col items-center">
-          <h1 className="mb-2 text-3xl font-semibold">Order your Model 3</h1>
-          <span className="text-lg font-semibold">Est. delivery: Feb 2023</span>
-        </div>
-        <div className="mx-[4.5rem] flex justify-center rounded-3xl bg-blue py-2">
-          <span className="uppercase text-white">Continue to payment</span>
-        </div>
-
-        <div className="relative -top-24 mx-14 flex items-center text-center">
-          <span className="text-md mx-8 p-6 text-gray-600">
-            Delivery timing may vary based on your configuration and location.
-            <a className="pl-1 underline underline-offset-4" href="">
-              See faster options
-            </a>
-          </span>
-
-          <div className="pb-[260px]"></div>
-        </div>
       </div>
-
-      <div className="h-96 bg-slate-200"></div>
     </div>
   )
 }

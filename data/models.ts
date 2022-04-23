@@ -28,27 +28,31 @@ export const models: IModel[] = [
             name: "18' Aero Wheels",
             cost: 0,
             code: 'W40B',
-            iconName: '18-aero',
+            iconUrl:
+              'https://static-assets.tesla.com/share/tesla_design_studio_assets/MODEL3/UI/option-wheels-18-aero.png?version=v0028d202204140414',
           },
           {
             type: OPTION_TYPE.WHEEL,
             name: "19' Sport Wheels",
             cost: 1500,
             code: 'W41B',
-            iconName: '19-sport',
+            iconUrl:
+              'https://static-assets.tesla.com/share/tesla_design_studio_assets/MODEL3/UI/option-wheels-19-sport.png?version=v0028d202204140414',
           },
         ],
         interior: [
           {
             type: OPTION_TYPE.INTERIOR,
-            iconName: 'in3pb',
+            iconUrl:
+              'https://static-assets.tesla.com/share/tesla_design_studio_assets/MODEL3/UI/ui_swat_int_in3pb.png?version=v0028d202204140414',
             name: 'All Black',
             code: 'IBB1',
             cost: 0,
           },
           {
             type: OPTION_TYPE.INTERIOR,
-            iconName: 'white',
+            iconUrl:
+              'https://static-assets.tesla.com/share/tesla_design_studio_assets/MODEL3/UI/ui_swat_int_white.png?version=v0028d202204140414',
             name: 'Black And White',
             code: 'IBW1',
             cost: 1100,
@@ -73,27 +77,31 @@ export const models: IModel[] = [
             name: "18' Aero Wheels",
             cost: 0,
             code: 'W40B',
-            iconName: '18-aero',
+            iconUrl:
+              'https://static-assets.tesla.com/share/tesla_design_studio_assets/MODEL3/UI/option-wheels-18-aero.png?version=v0028d202204140414',
           },
           {
             type: OPTION_TYPE.WHEEL,
             name: "19' Sport Wheels",
             cost: 1500,
             code: 'W41B',
-            iconName: '19-sport',
+            iconUrl:
+              'https://static-assets.tesla.com/share/tesla_design_studio_assets/MODEL3/UI/option-wheels-19-sport.png?version=v0028d202204140414',
           },
         ],
         interior: [
           {
             type: OPTION_TYPE.INTERIOR,
-            iconName: 'in3pb',
+            iconUrl:
+              'https://static-assets.tesla.com/share/tesla_design_studio_assets/MODEL3/UI/ui_swat_int_in3pb.png?version=v0028d202204140414',
             name: 'All Black',
             code: 'IPB1',
             cost: 0,
           },
           {
             type: OPTION_TYPE.INTERIOR,
-            iconName: 'white',
+            iconUrl:
+              'https://static-assets.tesla.com/share/tesla_design_studio_assets/MODEL3/UI/ui_swat_int_white.png?version=v0028d202204140414',
             name: 'Black And White',
             code: 'IPW1',
             cost: 1100,
@@ -118,20 +126,23 @@ export const models: IModel[] = [
             name: "20' Überturbine Wheels",
             cost: 0,
             code: 'W33D',
-            iconName: '20-uberturbine',
+            iconUrl:
+              'https://static-assets.tesla.com/share/tesla_design_studio_assets/MODEL3/UI/option-wheels-20-uberturbine.png?version=v0028d202204140414',
           },
         ],
         interior: [
           {
             type: OPTION_TYPE.INTERIOR,
-            iconName: 'in3pb',
+            iconUrl:
+              'https://static-assets.tesla.com/share/tesla_design_studio_assets/MODEL3/UI/ui_swat_int_in3pb.png?version=v0028d202204140414',
             name: 'All Black',
             code: 'IPB1',
             cost: 0,
           },
           {
             type: OPTION_TYPE.INTERIOR,
-            iconName: 'white',
+            iconUrl:
+              'https://static-assets.tesla.com/share/tesla_design_studio_assets/MODEL3/UI/ui_swat_int_white.png?version=v0028d202204140414',
             name: 'Black And White',
             code: 'IPW1',
             cost: 1100,
@@ -147,7 +158,100 @@ export const models: IModel[] = [
       'https://tesla-cdn.thron.com/delivery/public/image/tesla/8e2df1b9-a4bf-4eb9-beec-2cf5cc77fca0/bvlatuR/std/2880x2400/Desktop-ModelY?quality=70',
     mainMobilePreviewUrl:
       'https://tesla-cdn.thron.com/delivery/public/image/tesla/3304be3b-dd0a-4128-9c26-eb61c0b98d61/bvlatuR/std/800x2100/Mobile-ModelY',
-    configs: [],
+    configs: [
+      {
+        type: CONFIG_TYPE.AWD,
+        estDelivery: new Date('2022-05-01'),
+        name: 'Long Range',
+        price: 54990,
+        stats: {
+          range: 331,
+          topSpeed: 135,
+          acceleration: 4.8,
+        },
+        previewImageUrl:
+          'https://static-assets.tesla.com/configurator/compositor?&options=$MTY09,$XXX,$WWW,$III,$DRRH&view=FRONT34&model=my&size=1920&bkba_opt=2&version=v0028d202204210416&crop=1300,500,300,300&version=v0028d202204210416',
+        wheels: [
+          {
+            type: OPTION_TYPE.WHEEL,
+            name: "19' Gemini Wheels",
+            cost: 0,
+            code: 'WY19B',
+            iconUrl:
+              'https://static-assets.tesla.com/share/tesla_design_studio_assets/MODELY/UI/gemini_wheels.png?version=v0028d202204210416',
+          },
+          {
+            type: OPTION_TYPE.WHEEL,
+            name: "20' Induction Wheels",
+            cost: 2100,
+            code: 'WY20P',
+            iconUrl:
+              'https://static-assets.tesla.com/share/tesla_design_studio_assets/MODELY/UI/induction_wheels.png?version=v0028d202204210416',
+          },
+        ],
+        interior: [
+          {
+            type: OPTION_TYPE.INTERIOR,
+            iconUrl:
+              'https://static-assets.tesla.com/share/tesla_design_studio_assets/MODEL3/UI/Interior_Black.png?version=v0028d202204210416',
+
+            name: 'All Black',
+            code: 'INPB0',
+            cost: 0,
+          },
+          {
+            type: OPTION_TYPE.INTERIOR,
+            iconUrl:
+              'https://static-assets.tesla.com/share/tesla_design_studio_assets/MODEL3/UI/Interior_White.png?version=v0028d202204210416',
+            name: 'Black And White',
+            code: 'INPW0',
+            cost: 1100,
+          },
+        ],
+      },
+      {
+        type: CONFIG_TYPE.AWD,
+        estDelivery: new Date('2022-07-01'),
+        name: 'Performance',
+        price: 64990,
+        stats: {
+          range: 319,
+          topSpeed: 155,
+          acceleration: 3.5,
+        },
+        previewImageUrl:
+          'https://static-assets.tesla.com/configurator/compositor?&options=$MTY12,$XXX,$WWW,$III,$DRRH&view=FRONT34&model=my&size=1920&bkba_opt=2&version=v0028d202204210416&crop=1300,500,300,300&version=v0028d202204210416',
+        wheels: [
+          {
+            type: OPTION_TYPE.WHEEL,
+            name: "20' Induction Wheels",
+            cost: 2100,
+            code: 'WY20P',
+            iconUrl:
+              'https://static-assets.tesla.com/share/tesla_design_studio_assets/MODELY/UI/induction_wheels.png?version=v0028d202204210416',
+          },
+        ],
+        interior: [
+          {
+            type: OPTION_TYPE.INTERIOR,
+            iconUrl:
+              'https://static-assets.tesla.com/share/tesla_design_studio_assets/MODEL3/UI/Interior_Black.png?version=v0028d202204210416',
+
+            name: 'All Black',
+            code: 'INPB0',
+            cost: 0,
+          },
+          {
+            type: OPTION_TYPE.INTERIOR,
+            iconUrl:
+              'https://static-assets.tesla.com/share/tesla_design_studio_assets/MODEL3/UI/Interior_White.png?version=v0028d202204210416',
+            name: 'Black And White',
+            code: 'INPW0',
+            cost: 1100,
+          },
+        ],
+      },
+    ],
   },
   {
     id: 'model-s',

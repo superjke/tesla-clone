@@ -39,7 +39,7 @@ function ConfigurePage() {
           <div className="lg:flex lg:flex-1 lg:overflow-hidden">
             <div className="flex ">
               <img
-                className="h-full w-full object-contain"
+                className="mt-16 h-full w-full object-contain lg:mt-0"
                 src={getPreviewUrl(
                   model.configs.at(selections.config)?.previewImageUrl,
                   availableColours.at(selections.colour)?.code,
@@ -54,7 +54,7 @@ function ConfigurePage() {
               />
             </div>
             <div className="lg:flex lg:flex-1 lg:flex-col lg:items-center lg:justify-center">
-              <div className="mb-20 flex flex-1 justify-center lg:w-[500px] lg:overflow-y-auto">
+              <div className="flex flex-1 justify-center lg:w-[500px] lg:overflow-y-auto">
                 <ConfigureForm
                   model={model}
                   selections={selections}
