@@ -41,8 +41,13 @@ function AutoPilotOption(props: IProps) {
           <div />
         )}
       </div>
-      <div className="mt-8 flex h-9 w-full justify-around">
-        <ButtonsComp nameLeft="Add" nameRight="Feature Detials" />
+      <div className="mt-8 flex h-9 w-full justify-between space-x-12">
+        <div className="flex w-full items-center justify-center rounded-3xl bg-blue text-sm font-medium uppercase text-white">
+          Add
+        </div>
+        <div className="flex w-full items-center justify-center rounded-3xl bg-gray-100 text-sm uppercase text-black">
+          Feature Details
+        </div>
       </div>
     </div>
   )

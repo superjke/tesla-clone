@@ -1,10 +1,5 @@
-import React, { useEffect } from 'react'
-import { IOption, OPTION_TYPE } from '../../types/models'
-import {
-  getInteriorIconUrl,
-  getPaintIconUrl,
-  getWheelIconUrl,
-} from '../../utils/configure'
+import React from 'react'
+import { IOption } from '../../types/models'
 
 interface IProps {
   title: string
@@ -30,7 +25,7 @@ function OptionSelector(props: IProps) {
     <div />
   ) : (
     <div className="flex flex-col space-y-5">
-      <h1 className="text-center text-4xl font-semibold ">{props.title}</h1>
+      <h1 className="text-center text-4xl">{props.title}</h1>
       <div className="flex justify-center space-x-4">
         {props.options.map((option, index) => (
           <div
@@ -54,11 +49,9 @@ function OptionSelector(props: IProps) {
           </div>
         ))}
       </div>
-      <div className="flex items-center justify-center space-x-4">
-        <p className="text-xl font-semibold">
-          {props.options.at(props.selected)?.name}
-        </p>
-        <p className="text-xl text-gray-600">
+      <div className="flex items-center justify-center space-x-2">
+        <p className="text-xl">{props.options.at(props.selected)?.name}</p>
+        <p className="text-xl font-light text-gray-600">
           {formatCost(props.options.at(props.selected)?.cost)}
         </p>
       </div>

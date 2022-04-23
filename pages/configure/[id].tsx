@@ -26,6 +26,7 @@ function ConfigurePage() {
     }
   })
 
+  // TODO: Add loading spinner for preview image
   return (
     <div className="flex h-screen flex-col lg:overflow-y-hidden">
       <NavBar />
@@ -35,7 +36,7 @@ function ConfigurePage() {
           <h1>Whoops.. Something went wrong</h1>
         </div>
       ) : (
-        <main className="mt-20 lg:mt-10 lg:flex lg:h-screen lg:flex-col">
+        <main className="mt-16 lg:flex lg:h-screen lg:flex-col">
           <div className="lg:flex lg:flex-1 lg:overflow-hidden">
             <div className="flex ">
               <img

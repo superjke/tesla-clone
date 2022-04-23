@@ -8,7 +8,6 @@ export const models: IModel[] = [
       'https://tesla-cdn.thron.com/delivery/public/image/tesla/03e533bf-8b1d-463f-9813-9a597aafb280/bvlatuR/std/4096x2560/M3-Homepage-Desktop-LHD',
     mainMobilePreviewUrl:
       'https://tesla-cdn.thron.com/delivery/public/image/tesla/9160c5a3-b818-42dd-bb98-b8597948c636/bvlatuR/std/1927x4096/M3-Homepage-Mobile-LHD',
-
     configs: [
       {
         type: CONFIG_TYPE.RWD,
@@ -155,7 +154,7 @@ export const models: IModel[] = [
     id: 'model-y',
     name: 'Model Y',
     mainPreviewUrl:
-      'https://tesla-cdn.thron.com/delivery/public/image/tesla/8e2df1b9-a4bf-4eb9-beec-2cf5cc77fca0/bvlatuR/std/2880x2400/Desktop-ModelY?quality=70',
+      'https://tesla-cdn.thron.com/delivery/public/image/tesla/8e2df1b9-a4bf-4eb9-beec-2cf5cc77fca0/bvlatuR/std/2880x2400/Desktop-ModelY',
     mainMobilePreviewUrl:
       'https://tesla-cdn.thron.com/delivery/public/image/tesla/3304be3b-dd0a-4128-9c26-eb61c0b98d61/bvlatuR/std/800x2100/Mobile-ModelY',
     configs: [
@@ -236,7 +235,6 @@ export const models: IModel[] = [
             type: OPTION_TYPE.INTERIOR,
             iconUrl:
               'https://static-assets.tesla.com/share/tesla_design_studio_assets/MODEL3/UI/Interior_Black.png?version=v0028d202204210416',
-
             name: 'All Black',
             code: 'INPB0',
             cost: 0,
