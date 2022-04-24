@@ -13,6 +13,58 @@ interface IProps {
 }
 
 function OrderSummary(props: IProps) {
+  const summaryData = [
+    {
+      name: `${props.model.name} ${
+        props.model.configs[props.selections.config]?.name
+      }`,
+      cost: props.model.configs[props.selections.config]?.price,
+    },
+    {
+      name: `${availableColours[props.selections.colour]?.name} Paint`,
+      cost: availableColours[props.selections.colour]?.cost,
+    },
+    {
+      name: props.model.configs[props.selections.config]?.wheels[
+        props.selections.wheels
+      ].name,
+      cost: props.model.configs[props.selections.config]?.wheels[
+        props.selections.wheels
+      ].cost,
+    },
+    {
+      name: `${
+        props.model.configs[props.selections.config]?.interior[
+          props.selections.interior
+        ].name
+      } Interior`,
+      cost: props.model.configs[props.selections.config]?.interior[
+        props.selections.interior
+      ].cost,
+    },
+    { name: 'Autopilot', cost: 0 },
+  ]
+
+  if (props.selections.enhancedAutopilot) {
+    summaryData.push({ name: 'Enhanced Autopilot', cost: 3600 })
+  } else if (props.selections.fsdAutopilot) {
+    summaryData.push({ name: 'Full Self-Driving Capability', cost: 6800 })
+  }
+  summaryData.push({ name: '30-Day Premium Connectivity Trial', cost: 0 })
+
+  function getDetailedListItem(item: string, cost: number) {
+    return (
+      <li className="flex justify-between">
+        <span>{item}</span>
+        <span>{cost ? `£${cost.toLocaleString()}` : 'Included'}</span>
+      </li>
+    )
+  }
+
+  function getOrderTotalCost(): number {
+    return summaryData.map((item) => item.cost).reduce((a, b) => a + b)
+  }
+
   return (
     <>
       <div className="w-screen px-6 pt-12 pb-24 lg:w-[22rem]">
@@ -36,7 +88,7 @@ function OrderSummary(props: IProps) {
             <h1 className="whitespace-nowrap text-center text-3xl font-medium">
               Your {props.model.name}
             </h1>
-            <h2 className="whitespace-nowrap pt-2 text-center text-gray-600">
+            <h2 className="whitespace-nowrap pt-2 pb-4 text-center text-gray-600">
               Est. delivery:{' '}
               {props.model.configs[
                 props.selections.config
@@ -45,61 +97,12 @@ function OrderSummary(props: IProps) {
                 year: 'numeric',
               })}
             </h2>
-            <div className="mt-8 w-full lg:px-5">
-              <ol className="space-y-2 text-center text-gray-600 ">
-                <li>
-                  <span>
-                    {props.model.name}{' '}
-                    {props.model.configs[props.selections.config]?.name}
-                  </span>
-                </li>
-                <li>
-                  <span>
-                    {availableColours[props.selections.colour]?.name} Paint
-                  </span>
-                </li>
-                <li>
-                  <span>
-                    {
-                      props.model.configs[props.selections.config]?.wheels[
-                        props.selections.wheels
-                      ]?.name
-                    }
-                  </span>
-                </li>
-                <li>
-                  <span>
-                    {
-                      props.model.configs[props.selections.config]?.interior[
-                        props.selections.interior
-                      ]?.name
-                    }{' '}
-                    Interior
-                  </span>
-                </li>
-                <li>
-                  <span>Autopilot</span>
-                </li>
-                {props.selections.enhancedAutopilot ? (
-                  <li>
-                    <span>Enhanced Autopilot</span>
-                  </li>
-                ) : (
-                  <></>
-                )}
 
-                <li></li>
-                {props.selections.fsdAutopilot ? (
-                  <li>
-                    <span>Full Self-Driving Capability</span>
-                  </li>
-                ) : (
-                  <></>
-                )}
-
-                <li>
-                  <span>30-Day Premium Connectivity Trial</span>
-                </li>
+            <div>
+              <ol className="space-y-2  text-gray-600 ">
+                {summaryData.map((item) => {
+                  return getDetailedListItem(item.name, item.cost)
+                })}
               </ol>
             </div>
           </div>
@@ -107,12 +110,7 @@ function OrderSummary(props: IProps) {
           <div>
             <div className="flex justify-between">
               <span>Purchase Price</span>
-              <span>
-                £
-                {props.model.configs[
-                  props.selections.config
-                ]?.price.toLocaleString()}
-              </span>
+              <span>£{getOrderTotalCost().toLocaleString()}</span>
             </div>
             <div className="mt-3 flex justify-between">
               <span>Due today</span>
