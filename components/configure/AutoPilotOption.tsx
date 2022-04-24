@@ -1,6 +1,4 @@
-import { Upcoming } from '@mui/icons-material'
 import React from 'react'
-import ButtonsComp from './ButtonsComp'
 
 interface IProps {
   title: string
