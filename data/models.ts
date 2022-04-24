@@ -1,4 +1,5 @@
-import { CONFIG_TYPE, IModel, OPTION_TYPE } from '../typings'
+import { IModel } from '../typings'
+import { CONFIG_TYPE, OPTION_TYPE } from '../src/enums'
 
 export const models: IModel[] = [
   {

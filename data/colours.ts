@@ -1,4 +1,5 @@
-import { IOption, OPTION_TYPE } from '../typings'
+import { IOption } from '../typings'
+import { OPTION_TYPE } from '../src/enums'
 
 export const availableColours: IOption[] = [
   {
