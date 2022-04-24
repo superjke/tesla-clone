@@ -70,7 +70,7 @@ function ConfigurePage() {
           <div className="lg:flex lg:flex-1 lg:overflow-hidden">
             <div className={previewLoading ? 'hidden' : ''}>
               <img
-                className="mt-16 h-full w-full object-contain lg:mt-0"
+                className="mt-16 h-full w-full object-scale-down lg:mt-0"
                 src={getPreviewUrl(
                   selections,
                   model.configs[selections.config]
