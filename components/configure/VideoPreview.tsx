@@ -14,7 +14,7 @@ function VideoPreview(props: IProps) {
       <h2 className="pl-6 font-medium">{props.title}</h2>
       <video
         className="w-full"
-        autoPlay={isMobile ? true : false}
+        autoPlay={isMobile ? false : true}
         loop
         src={props.url}
       ></video>
