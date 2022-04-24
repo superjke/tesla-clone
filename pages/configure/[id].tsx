@@ -24,13 +24,12 @@ function ConfigurePage() {
   const model: IModel | undefined = models.find((m) => m.id === id)
   const wheelOptions = model?.configs.at(selections.config)?.wheels
 
-  useEffect(() => {
-    if (wheelOptions && selections.wheels > wheelOptions.length - 1) {
-      setSelections({ ...selections, wheels: 0 })
-    }
-  })
+  // useEffect(() => {
+  //   if (wheelOptions && selections.wheels > wheelOptions.length - 1) {
+  //     setSelections({ ...selections, wheels: 0 })
+  //   }
+  // })
 
-  // TODO: Add loading spinner for preview image
   return (
     <div className=" flex h-screen w-screen items-center justify-center">
       <h1>Hello</h1>
