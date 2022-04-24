@@ -7,18 +7,7 @@ import { models } from '../data/models'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 import CloseIcon from '@mui/icons-material/Close'
 import { grey } from '@mui/material/colors'
-import { IconButton } from '@mui/material'
 import useDeviceSize from '../utils/hooks'
-
-const footerItems = [
-  'Legal',
-  'Recalls',
-  'Contact',
-  'Careers',
-  'News',
-  'Engage',
-  'Locations',
-]
 
 const Home: NextPage = () => {
   const [menuOpen, setMenuOpen] = useState(false)
