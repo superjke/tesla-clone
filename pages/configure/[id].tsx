@@ -19,11 +19,16 @@ function ConfigurePage() {
     enhancedAutopilot: false,
     fsdAutopilot: false,
   })
-  console.log('id:' + id)
   const [previewLoading, setPreviewLoading] = useState(true)
   const model: IModel | undefined = models.find((m) => m.id === id)
-  console.log(model?.configs ?? 'undefined')
-  console.log(selections.config)
+
+  useEffect(() => {
+    // Reset selection when invalid
+    const wheelOptions = model?.configs[selections.config]?.wheels
+    if (wheelOptions && selections.wheels > wheelOptions.length - 1) {
+      setSelections({ ...selections, wheels: 0 })
+    }
+  })
 
   const getPreviewUrl = (
     selections: ISelections,
