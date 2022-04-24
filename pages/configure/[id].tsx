@@ -67,13 +67,13 @@ function ConfigurePage() {
             {!previewLoading && (
               <div className="lg:flex lg:flex-1 lg:flex-col lg:items-center lg:justify-center">
                 <div className="flex flex-1 justify-center lg:w-[500px] lg:overflow-y-auto">
-                  <ConfigureForm
+                  {/* <ConfigureForm
                     model={model}
                     selections={selections}
                     updateSelections={(updatedSelections: ISelections) =>
                       setSelections(updatedSelections)
                     }
-                  />
+                  /> */}
                 </div>
               </div>
             )}
