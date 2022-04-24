@@ -22,7 +22,7 @@ function AutoPilotOption(props: IProps) {
         <ul style={{ listStyleType: 'disc' }}>
           {props.features.map((feature) => {
             return (
-              <li>
+              <li key={feature}>
                 <span className=" font-light text-gray-600">{feature}</span>
               </li>
             )
