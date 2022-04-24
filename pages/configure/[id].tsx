@@ -5,8 +5,8 @@ import ConfigureForm from '../../components/configure/ConfigureForm'
 import NavBar from '../../components/configure/NavBar'
 import { availableColours } from '../../data/colours'
 import { models } from '../../data/models'
-import { ISelections } from '../../types/configure'
-import { IModel } from '../../types/models'
+import { ISelections } from '../../typings'
+import { IModel } from '../../typings'
 import { getPreviewUrl } from '../../utils/configure'
 
 function ConfigurePage() {

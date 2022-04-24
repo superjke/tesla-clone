@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import { IModel } from '../../types/models'
+import { IModel } from '../../typings'
 import useDeviceSize from '../../utils/hooks'
 
 interface IProps {

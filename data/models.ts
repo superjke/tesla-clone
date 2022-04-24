@@ -1,4 +1,4 @@
-import { CONFIG_TYPE, IModel, OPTION_TYPE } from '../types/models'
+import { CONFIG_TYPE, IModel, OPTION_TYPE } from '../typings'
 
 export const models: IModel[] = [
   {

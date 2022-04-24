@@ -1,9 +1,9 @@
 import { Avatar } from '@mui/material'
 import React from 'react'
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
-import { IModel } from '../../types/models'
+import { IModel } from '../../typings'
 import { grey } from '@mui/material/colors'
-import { ISelections } from '../../types/configure'
+import { ISelections } from '../../typings'
 import { availableColours } from '../../data/colours'
 
 interface IProps {

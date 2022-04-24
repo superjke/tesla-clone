@@ -31,6 +31,15 @@ export interface IOption {
   iconUrl: string
 }
 
+export interface ISelections {
+  config: number
+  colour: number
+  wheels: number
+  interior: number
+  enhancedAutopilot: boolean
+  fsdAutopilot: boolean
+}
+
 export enum OPTION_TYPE {
   COLOUR = 'COLOUR',
   WHEEL = 'WHEEL',

@@ -1,4 +1,4 @@
-import { IOption, OPTION_TYPE } from '../types/models'
+import { IOption, OPTION_TYPE } from '../typings'
 
 export const availableColours: IOption[] = [
   {

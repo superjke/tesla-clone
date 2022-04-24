@@ -1,5 +1,5 @@
 import React from 'react'
-import { IOption } from '../../types/models'
+import { IOption } from '../../typings'
 
 interface IProps {
   title: string

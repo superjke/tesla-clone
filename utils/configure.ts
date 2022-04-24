@@ -1,5 +1,5 @@
 import { availableColours } from '../data/colours'
-import { IOption } from '../types/models'
+import { IOption } from '../typings'
 
 export const basePaintIconUrl =
   'https://static-assets.tesla.com/share/tesla_design_studio_assets/MODEL3/UI/Paint_XXX.png?version=v0028d202204140414'
