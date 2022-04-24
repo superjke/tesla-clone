@@ -134,10 +134,10 @@ function ConfigureForm(props: IProps) {
         <>
           <div className="w-11/12 pt-8 lg:w-[22rem] lg:pt-20 ">
             <div className="mb-12">
-              <h1 className="whitespace-nowrap text-center font-gotham text-4xl">
+              <h1 className="whitespace-nowrap text-center text-4xl">
                 {props.model.name}
               </h1>
-              <h2 className="whitespace-nowrap text-center text-gray-500">
+              <h2 className="whitespace-nowrap pt-2 text-center text-gray-500">
                 Est. delivery:{' '}
                 {props.model.configs
                   .at(props.selections.config)

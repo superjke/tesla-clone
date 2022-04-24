@@ -2,6 +2,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['tesla-cdn.thron.com', 'fonts.cdnfonts.com'],
+    domains: ['tesla-cdn.thron.com'],
   },
 }

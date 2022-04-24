@@ -33,10 +33,10 @@ function OrderSummary(props: IProps) {
         </div>
         <div className="mt-12  space-y-16 lg:space-y-16">
           <div>
-            <h1 className="whitespace-nowrap text-center font-gotham text-3xl font-medium">
+            <h1 className="whitespace-nowrap text-center text-3xl font-medium">
               Your {props.model.name}
             </h1>
-            <h2 className="whitespace-nowrap text-center text-gray-600">
+            <h2 className="whitespace-nowrap pt-2 text-center text-gray-600">
               Est. delivery:{' '}
               {props.model.configs
                 .at(props.selections.config)
