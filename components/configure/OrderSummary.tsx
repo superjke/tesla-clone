@@ -38,41 +38,41 @@ function OrderSummary(props: IProps) {
             </h1>
             <h2 className="whitespace-nowrap pt-2 text-center text-gray-600">
               Est. delivery:{' '}
-              {props.model.configs
-                .at(props.selections.config)
-                ?.estDelivery.toLocaleString('default', {
-                  month: 'long',
-                  year: 'numeric',
-                })}
+              {props.model.configs[
+                props.selections.config
+              ]?.estDelivery.toLocaleString('default', {
+                month: 'long',
+                year: 'numeric',
+              })}
             </h2>
             <div className="mt-8 w-full lg:px-5">
               <ol className="space-y-2 text-center text-gray-600 ">
                 <li>
                   <span>
                     {props.model.name}{' '}
-                    {props.model.configs.at(props.selections.config)?.name}
+                    {props.model.configs[props.selections.config]?.name}
                   </span>
                 </li>
                 <li>
                   <span>
-                    {availableColours.at(props.selections.colour)?.name} Paint
+                    {availableColours[props.selections.colour]?.name} Paint
                   </span>
                 </li>
                 <li>
                   <span>
                     {
-                      props.model.configs
-                        .at(props.selections.config)
-                        ?.wheels.at(props.selections.wheels)?.name
+                      props.model.configs[props.selections.config]?.wheels[
+                        props.selections.wheels
+                      ]?.name
                     }
                   </span>
                 </li>
                 <li>
                   <span>
                     {
-                      props.model.configs
-                        .at(props.selections.config)
-                        ?.interior.at(props.selections.interior)?.name
+                      props.model.configs[props.selections.config]?.interior[
+                        props.selections.interior
+                      ]?.name
                     }{' '}
                     Interior
                   </span>
@@ -109,9 +109,9 @@ function OrderSummary(props: IProps) {
               <span>Purchase Price</span>
               <span>
                 £
-                {props.model.configs
-                  .at(props.selections.config)
-                  ?.price.toLocaleString()}
+                {props.model.configs[
+                  props.selections.config
+                ]?.price.toLocaleString()}
               </span>
             </div>
             <div className="mt-3 flex justify-between">

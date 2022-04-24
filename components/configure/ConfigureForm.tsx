@@ -64,7 +64,7 @@ interface IProps {
 }
 
 function ConfigureForm(props: IProps) {
-  const currentConfig = props.model.configs.at(props.selections.config)
+  const currentConfig = props.model.configs[props.selections.config]
   const pageError = currentConfig === undefined
   const [showSummary, setShowSummary] = useState(false)
 
@@ -139,12 +139,12 @@ function ConfigureForm(props: IProps) {
               </h1>
               <h2 className="whitespace-nowrap pt-2 text-center text-gray-500">
                 Est. delivery:{' '}
-                {props.model.configs
-                  .at(props.selections.config)
-                  ?.estDelivery.toLocaleString('default', {
-                    month: 'long',
-                    year: 'numeric',
-                  })}
+                {props.model.configs[
+                  props.selections.config
+                ]?.estDelivery.toLocaleString('default', {
+                  month: 'long',
+                  year: 'numeric',
+                })}
               </h2>
             </div>
 
@@ -190,7 +190,7 @@ function ConfigureForm(props: IProps) {
 
           <OptionSelector
             title="Wheels"
-            options={props.model.configs.at(props.selections.config)?.wheels}
+            options={props.model.configs[props.selections.config]?.wheels}
             selected={props.selections.wheels}
             updateSelected={updateWheelSelection}
           />
@@ -243,12 +243,12 @@ function ConfigureForm(props: IProps) {
               <h1 className="mb-2 text-3xl">Order your Model 3</h1>
               <span className="text-lg">
                 Est. delivery:{' '}
-                {props.model.configs
-                  .at(props.selections.config)
-                  ?.estDelivery.toLocaleString('default', {
-                    month: 'long',
-                    year: 'numeric',
-                  })}
+                {props.model.configs[
+                  props.selections.config
+                ]?.estDelivery.toLocaleString('default', {
+                  month: 'long',
+                  year: 'numeric',
+                })}
               </span>
             </div>
             <button

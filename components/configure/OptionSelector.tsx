@@ -50,9 +50,9 @@ function OptionSelector(props: IProps) {
         ))}
       </div>
       <div className="flex items-center justify-center space-x-2">
-        <p className="text-xl">{props.options.at(props.selected)?.name}</p>
+        <p className="text-xl">{props.options[props.selected]?.name}</p>
         <p className="text-xl font-light text-gray-600">
-          {formatCost(props.options.at(props.selected)?.cost)}
+          {formatCost(props.options[props.selected]?.cost)}
         </p>
       </div>
     </div>
