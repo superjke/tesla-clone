@@ -253,7 +253,10 @@ function ConfigureForm(props: IProps) {
             </div>
             <button
               className="mx-[4.5rem] flex w-[80%] justify-center rounded-3xl bg-blue py-2"
-              onClick={() => toggleSummary()}
+              onClick={() => {
+                window.scrollTo(0, 0)
+                toggleSummary()
+              }}
             >
               <span className="uppercase text-white">Continue to payment</span>
             </button>
